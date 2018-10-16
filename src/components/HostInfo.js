@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import { Card, Grid, Image, Dropdown, List, Segment } from 'semantic-ui-react'
+import { Radio, Icon, Card, Grid, Image, Dropdown, List, Segment, Divider } from 'semantic-ui-react'
 
 
 class HostInfo extends Component{
   state = {
+    checked: false,
     value: "Area one",
     areas: [
       {key: 'area1', text: 'area1', value: 'Area one'},
@@ -13,6 +14,8 @@ class HostInfo extends Component{
   }
 
   handleChange = (e, {value}) => this.setState({value})
+
+  toggle = () => this.setState({checked: !this.state.checked})
 
   render(){
     const { value, areas } = this.state
@@ -27,20 +30,20 @@ class HostInfo extends Component{
             <Card>
               <Card.Content>
                 <Card.Header>
-                  Billy
+                  Teddy Flood <Icon name='man' />
                 </Card.Header>
                 <Card.Meta>
-                  Created on date
+                  <Radio style={{margin: "10px"}} slider onChange={this.toggle} label={this.state.checked ? "Active" : "Decommissioned"} checked={this.state.checked}/>
                 </Card.Meta>
-                <List>
-                  <List.Item>Age: 27</List.Item>
-                  <List.Item>Gender: Male</List.Item>
-                </List>
+
+                <Divider />
+                Current Area:
                 <Dropdown
                   onChange={this.handleChange}
                   value={value}
                   selection
                   options={areas} />
+
               </Card.Content>
             </Card>
           </Grid.Column>

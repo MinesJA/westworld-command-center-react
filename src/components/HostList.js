@@ -8,7 +8,6 @@ const HostList = (props) => (
     <Host />
     <Host />
     <Host />
-    <Host />
   </Card.Group>
 )
 

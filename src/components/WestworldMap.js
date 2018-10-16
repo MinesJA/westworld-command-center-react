@@ -26,6 +26,7 @@ class WestworldMap extends Component {
     let style = {
       backgroundImage: 'url("http://i.imgur.com/2fVdhfG.jpg")',
       backgroundSize: '100%',
+      position: 'relative',
       width: '100%',
       height: '80%'
     }
