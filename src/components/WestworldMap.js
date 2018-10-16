@@ -16,7 +16,7 @@ class WestworldMap extends Component {
 
   renderAreas = () => (
     this.state.areas.map( area =>
-      <Area className="Area" className="Area" id={area} key={area}/>
+      <Area className="Area" className="Area" areaName={area} key={area}/>
     )
   )
 
@@ -31,7 +31,7 @@ class WestworldMap extends Component {
     }
 
     return (
-      <Segment style={style}>
+      <Segment style={style} >
         {this.renderAreas()}
       </Segment>
     )

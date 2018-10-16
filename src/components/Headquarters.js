@@ -12,17 +12,22 @@ const Headquarters = (props) => {
 
   let style = {
     width: '100%',
+    height: '300px',
     display: 'flex',
     justifyContent: 'space-around',
     alignItems: 'baseline'
   }
 
-
   return(
-    <Segment style={style}>
-      <ColdStorage />
-      <HostInfo />
-    </Segment>
+    <Grid celled='internally'>
+      <Grid.Column width={10}>
+        <ColdStorage />
+      </Grid.Column>
+
+      <Grid.Column width={5}>
+        <HostInfo />
+      </Grid.Column>
+    </Grid>
   )
 }
 

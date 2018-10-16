@@ -22,7 +22,7 @@ class App extends Component {
   render(){
 
     let style = {
-      width: '1800px',
+      width: '1500px',
       height: '900px',
       display: 'flex',
       flexDirection: 'column',
