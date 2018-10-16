@@ -123,7 +123,7 @@
   ],
   "areas": [
     {
-      "areaName": "high_plains",
+      "name": "high_plains",
       "limit": 8,
       "style": {
         "top": "20px",
@@ -136,7 +136,7 @@
       }
     },
     {
-      "areaName": "lowlands",
+      "name": "lowlands",
       "limit": 6,
       "style": {
         "top": "225px",
@@ -149,7 +149,7 @@
       }
     },
     {
-      "areaName": "under_construction",
+      "name": "under_construction",
       "limit": 8,
       "style": {
         "top": "425px",
@@ -162,7 +162,7 @@
       }
     },
     {
-      "areaName": "pariah",
+      "name": "pariah",
       "limit": 14,
       "style": {
         "top": "450px",
@@ -175,7 +175,7 @@
       }
     },
     {
-      "areaName": "python_pass",
+      "name": "python_pass",
       "limit": 14,
       "style": {
         "top": "10px",
@@ -188,10 +188,16 @@
       }
     },
     {
-      "areaName": "badlands",
+      "name": "badlands",
       "limit": 10,
       "style": {
-
+        "top": "225px",
+        "left": "700px",
+        "width": "400px",
+        "padding": "10px",
+        "minHeight": "175px",
+        "maxHeight": "175px",
+        "height": "100%"
       }
     }
   ]

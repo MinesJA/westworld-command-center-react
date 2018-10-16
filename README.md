@@ -1,5 +1,15 @@
 # Westworld Command Center
 
+DB
+==
+Run `json-server --watch db.json --port 3001` to start the server on port 3001 (so you can run React on port 3000 simultaneously).
+
+Endpoints:
+1. GET /hosts
+2. GET /areas
+
+
+
 Rules
 ========
 Hosts
@@ -19,7 +29,7 @@ ColdStorage
 3.
 
 Area
-1. Area's should be rendered based on info fetched from db.
+1. Area's should be rendered based on info fetched from db. Format the name to remove underscores and capitalize. Ex: 'high_plains' should be displayed as "High Plains"
 2. Set the style property on the parent div of the Area component with the incoming style attribute from the db.
 3. Areas can only hold as many hosts as the limit attribute dictates from the database. Once that limit is reached, hosts should be restricted from being added to that area.
 4. Only Bernard should be able to enter the "Under Construction" area.

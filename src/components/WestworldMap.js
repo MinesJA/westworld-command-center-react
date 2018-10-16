@@ -5,34 +5,34 @@ import { Segment } from 'semantic-ui-react';
 
 class WestworldMap extends Component {
   state = {
-    areas: ["high_plains",
-            "lowlands",
-            "under_construction",
-            "pariah",
-            "python_pass",
-            "badlands"]
+    areas: []
   }
 
+  componentDidMount(){
+    fetch("http://localhost:3000/areas")
+			.then(res => res.json())
+			.then(result => {
+        this.setState({areas: result}, ()=>{console.log(this.state)})
+      })
+  }
 
   renderAreas = () => (
     this.state.areas.map( area =>
-      <Area className="Area" className="area" id={area} areaName={area} key={area}/>
+      <Area className="Area"
+        className="area"
+        areaName={area.name}
+        key={area.name}
+        style={area.style}
+        hosts={this.props.hosts}/>
     )
   )
 
 
+
   render(){
-
-    let style = {
-      backgroundImage: 'url("http://i.imgur.com/2fVdhfG.jpg")',
-      backgroundSize: '100%',
-      position: 'relative',
-      width: '100%',
-      height: '80%'
-    }
-
+    console.log(this.props.hosts)
     return (
-      <Segment style={style} >
+      <Segment id="map" >
         {this.renderAreas()}
       </Segment>
     )

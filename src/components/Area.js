@@ -2,12 +2,18 @@ import React from 'react';
 import HostList from './HostList';
 import { Segment, Container } from 'semantic-ui-react';
 
-const Area = (props) => (
-  <div id={props.id} className='area'>
-    <h3 style={{color:'white'}}>{props.areaName}</h3>
-    <HostList />
-  </div>
+const Area = ({areaName, style, hosts}) => {
 
-)
+  const renderHosts = () => (
+    hosts.filter( host => host.area == areaName )
+  )
+
+  return(
+    <div style={style} className='area'>
+      <h3>{areaName}</h3>
+      <HostList hosts={renderHosts()}/>
+    </div>
+  )
+}
 
 export default Area;
