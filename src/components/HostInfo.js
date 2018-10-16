@@ -11,15 +11,23 @@ class HostInfo extends Component{
       {key: 'area2', text: 'area2', value: 'Area two'},
       {key: 'area3', text: 'area3', value: 'Area three'}
     ]
+    // This state is here to show you how the Info box should work. But it doesn't have to (and probably shouldn't) live here
+    // Plus the areas aren't called area1,2,or 3. That's just a placeholder.
   }
 
-  handleChange = (e, {value}) => this.setState({value})
+  handleChange = (e) => {
+    // Your code here
+  }
 
-  toggle = () => this.setState({checked: !this.state.checked})
+
+  toggle = () => {
+    // Your code here
+  }
 
   render(){
     const { value, areas } = this.state
-    console.log(value)
+    // A lot of these values are hardcoded.....but they shouldn't be, hint hint....
+
     return (
       <Segment>
         <Grid>
@@ -31,6 +39,7 @@ class HostInfo extends Component{
               <Card.Content>
                 <Card.Header>
                   Teddy Flood <Icon name='man' />
+                  { /* What should happen when the host isn't a man? Or when his name isn't Teddy? */}
                 </Card.Header>
                 <Card.Meta>
                   <Radio style={{margin: "10px"}} slider onChange={this.toggle} label={this.state.checked ? "Active" : "Decommissioned"} checked={this.state.checked}/>

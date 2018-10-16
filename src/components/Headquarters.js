@@ -1,20 +1,20 @@
 import React from 'react';
-import { Segment, Grid } from 'semantic-ui-react';
-import HostInfo from './HostInfo';
-import ColdStorage from './ColdStorage';
-
+import { Grid } from 'semantic-ui-react';
 
 const Headquarters = (props) => {
-
 
   return(
     <Grid celled='internally'>
       <Grid.Column width={10}>
-        <ColdStorage />
+
+        { /* Component goes here */}
+
       </Grid.Column>
 
       <Grid.Column width={5}>
-        <HostInfo />
+
+        { /* Component goes here */}
+
       </Grid.Column>
     </Grid>
   )
