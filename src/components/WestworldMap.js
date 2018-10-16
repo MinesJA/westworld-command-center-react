@@ -21,11 +21,13 @@ class WestworldMap extends Component {
   )
 
 
-  render() {
+  render(){
 
     let style = {
       backgroundImage: 'url("http://i.imgur.com/2fVdhfG.jpg")',
-      width: '100%'
+      backgroundSize: '100%',
+      width: '100%',
+      height: '80%'
     }
 
     return (

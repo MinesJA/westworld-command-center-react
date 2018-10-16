@@ -5,28 +5,34 @@ import Headquarters from './components/Headquarters'
 
 
 class App extends Component {
-
+  state = {
+    hosts: []
+  }
 
   // componentDidMount() {
 	// 	fetch("http://localhost:3000/hosts")
 	// 		.then(res => res.json())
-	// 		.then(result => this.setState({
-  //       hosts: result}, console.log(this.state)));
+	// 		.then(result => {
+  //       this.setState({hosts: result}, ()=>{console.log(this.state)})
+  //     })
 	// }
 
 
 
-  render() {
+  render(){
+
     let style = {
-      width: '90%',
+      width: '1800px',
+      height: '900px',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center'
     }
+
     return (
       <Segment style={style}>
-        <WestworldMap areas={this.state.areas} />
-        <Headquarters hosts={this.state.hosts} />
+        <WestworldMap hosts={this.state.hosts}/>
+        <Headquarters hosts={this.state.hosts}/>
       </Segment>
     )
   }

@@ -27,6 +27,4 @@ const Headquarters = (props) => {
 }
 
 
-
-
 export default Headquarters;
