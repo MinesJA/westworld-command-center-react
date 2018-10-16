@@ -16,7 +16,7 @@ class WestworldMap extends Component {
 
   renderAreas = () => (
     this.state.areas.map( area =>
-      <Area className="Area" className="Area" areaName={area} key={area}/>
+      <Area className="Area" className="area" id={area} areaName={area} key={area}/>
     )
   )
 

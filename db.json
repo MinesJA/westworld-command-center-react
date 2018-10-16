@@ -30,5 +30,21 @@
       "gender": "m",
       "area": "headquarters"
     }
+  ],
+  "areas": [
+
+    [,
+            "lowlands",
+            "under_construction",
+            "pariah",
+            "python_pass",
+            "badlands"]
+    {
+      "areaName": "high_plains",
+      "limit": 8,
+      "style": {
+        
+      }
+    }
   ]
 }
