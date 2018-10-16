@@ -6,6 +6,8 @@ body {
 
 h3 {
   color: white;
+  padding: 2px; 
+  background-color: black;
 }
 
 #app {

@@ -3,122 +3,122 @@
     {
       "firstName": "Dolores",
       "lastName": "Abernathy",
-      "status": "Active",
+      "active": false,
       "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/5/51/Dolores_Abernathy_Vanishing_Point.jpg/revision/latest?cb=20180613181613",
       "gender": "Female",
-      "area": "cold_storage"
+      "area": "high_plains"
     },
     {
       "firstName": "Beranrd",
       "lastName": "Lowe",
-      "status": "Active",
+      "active": false,
       "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/b/b6/Bernard_Les_Ecorches.png/revision/latest/scale-to-width-down/310?cb=20180604190617",
       "gender": "Male",
-      "area": "cold_storage"
+      "area": "lowlands"
     },
     {
       "firstName": "Maeve",
       "lastName": "Millay",
-      "status": "Active",
+      "active": false,
       "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/d/d8/Maeve_Les_Ecorches.jpg/revision/latest?cb=20180530183051",
       "gender": "Female",
-      "area": "cold_storage"
+      "area": "pariah"
     },
     {
       "firstName": "Akecheta",
       "lastName": "Kiksuya",
-      "status": "Active",
+      "active": false,
       "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/8/82/Akecheta_Kiksuya.jpg/revision/latest?cb=20180607183222",
       "gender": "Male",
-      "area": "cold_storage"
+      "area": "python_pass"
     },
     {
       "firstName": "Peter",
       "lastName": "Abernathy",
-      "status": "Decommissioned",
+      "active": false,
       "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/a/a2/Peter_Abernathy_%281%29.jpg/revision/latest?cb=20161024014816",
       "gender": "Male",
-      "area": "cold_storage"
+      "area": "badlands"
     },
     {
       "firstName": "Angela",
       "lastName": "n/a",
-      "status": "Decommissioned",
+      "active": false,
       "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/b/b2/Angela_Reunion.jpg/revision/latest/scale-to-width-down/310?cb=20180509174920",
       "gender": "Female",
-      "area": "cold_storage"
+      "area": "high_plains"
     },
     {
       "firstName": "Akane",
       "lastName": "n/a",
-      "status": "Active",
+      "active": false,
       "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/f/f3/Akane.jpg/revision/latest/scale-to-width-down/310?cb=20180520132523",
       "gender": "Female",
-      "area": "cold_storage"
+      "area": "lowlands"
     },
     {
       "firstName": "Lawrence",
       "lastName": "n/a",
-      "status": "Active",
+      "active": false,
       "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/c/cb/Lawrence_Reunion.jpg/revision/latest/scale-to-width-down/310?cb=20180613182747",
       "gender": "Male",
-      "area": "cold_storage"
+      "area": "pariah"
     },
     {
       "firstName": "Teddy",
       "lastName": "Flood",
-      "status": "Active",
+      "active": false,
       "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/a/a9/Teddy_Flood_Phase_Space.jpg/revision/latest/scale-to-width-down/310?cb=20180526115338",
       "gender": "Male",
-      "area": "cold_storage"
+      "area": "python_pass"
     },
     {
       "firstName": "Clementine",
       "lastName": "Pennyfeather",
-      "status": "Decommissioned",
+      "active": false,
       "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/4/44/Clementine_The_Riddle_of_the_Sphinx.jpg/revision/latest?cb=20180516165617",
       "gender": "Female",
-      "area": "cold_storage"
+      "area": "badlands"
     },
     {
       "firstName": "Armistice",
       "lastName": "n/a",
-      "status": "Active",
+      "active": false,
       "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/7/78/Armistice_Akane_No_Mai.jpg/revision/latest/scale-to-width-down/310?cb=20180517164314",
       "gender": "Female",
-      "area": "cold_storage"
+      "area": "high_plains"
     },
     {
       "firstName": "Hector",
       "lastName": "Escaton",
-      "status": "Active",
+      "active": false,
       "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/7/78/Hector_Journey_Into_Night.jpg/revision/latest/scale-to-width-down/310?cb=20180613183102",
       "gender": "Male",
-      "area": "cold_storage"
+      "area": "lowlands"
     },
     {
       "firstName": "Major",
       "lastName": "Carddock",
-      "status": "Decommissioned",
+      "active": false,
       "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/3/3b/Major_Craddock_The_Riddle_of_the_Sphinx.jpg/revision/latest?cb=20180511205852",
       "gender": "Male",
-      "area": "cold_storage"
+      "area": "pariah"
     },
     {
       "firstName": "Rebus",
       "lastName": "n/a",
-      "status": "Active",
+      "active": false,
       "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/f/fe/203_Rebus.png/revision/latest/scale-to-width-down/310?cb=20180607104216",
       "gender": "Male",
-      "area": "cold_storage"
+      "area": "python_pass"
     },
     {
       "firstName": "Musashi",
       "lastName": "n/a",
-      "status": "Active",
+      "active": false,
       "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/6/6b/Musashi_Akane_No_Mai.jpg/revision/latest/scale-to-width-down/310?cb=20180520131337",
       "gender": "Male",
-      "area": "cold_storage"
+      "area": "badlands"
     }
   ],
   "areas": [

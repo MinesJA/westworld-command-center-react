@@ -10,7 +10,7 @@ const Headquarters = (props) => {
   return(
     <Grid celled='internally'>
       <Grid.Column width={10}>
-        <ColdStorage />
+        <ColdStorage hosts={props.hosts}/>
       </Grid.Column>
 
       <Grid.Column width={5}>
