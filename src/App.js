@@ -1,14 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Grid, Segment } from 'semantic-ui-react';
-import HomeMap from './HomeMap';
-import Headquarters from './Headquarters'
+import WestworldMap from './components/WestworldMap';
+import Headquarters from './components/Headquarters'
 
 
 class App extends Component {
-  state = {
 
-  }
-  
 
   // componentDidMount() {
 	// 	fetch("http://localhost:3000/hosts")
@@ -20,25 +17,17 @@ class App extends Component {
 
 
   render() {
+    let style = {
+      width: '90%',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center'
+    }
     return (
-      <Grid centered>
-        <Grid.Row>
-          <Grid.Column width={1}/>
-          <Grid.Column width={14}>
-            <Segment></Segment>
-            <HomeMap areas={this.state.areas} hosts={this.state.hosts} />
-            <Segment></Segment>
-          </Grid.Column>
-          <Grid.Column width={1}/>
-        </Grid.Row>
-        <Grid.Row>
-          <Grid.Column width={1}/>
-          <Grid.Column width={14}>
-            <Headquarters hosts={this.state.hosts} />
-          </Grid.Column>
-          <Grid.Column width={1}/>
-        </Grid.Row>
-      </Grid>
+      <Segment style={style}>
+        <WestworldMap areas={this.state.areas} />
+        <Headquarters hosts={this.state.hosts} />
+      </Segment>
     )
   }
 }

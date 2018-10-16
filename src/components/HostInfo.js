@@ -1,7 +1,4 @@
-import React from 'react';
-import './App.css';
-import HomeMap from './HomeMap';
-import Headquarters from './Headquarters.js';
+import React from 'react'
 import { Card, Icon, Image } from 'semantic-ui-react'
 
 
