@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+#map{
+
+  ;
+}
+
+#high_plains {
+  top: 35px;
+  left: 350px;
+  width: 300px;
+  height: 200px;
+}
+
+#lowlands{
+  top: 240px;
+  left: 400px;
+  width: 250px;
+  height: 150px;
+}
+
+#under_construction{
+  top: 400px;
+  left: 350px;
+  width: 300px;
+  height: 300px;
+}
+
+#pariah{
+  top: 460px;
+  left: 660px;
+  width: 300px;
+  height: 250px;
+}
+
+#python_pass{
+  top: 15px;
+  left: 660px;
+  width: 300px;
+  height: 200px;
+}
+
+#badlands{
+    top: 225px;
+    left: 660px;
+    width: 300px;
+    height: 225px;
+}

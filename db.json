@@ -1,0 +1,34 @@
+{
+  "hosts": [
+    {
+      "name": "Bob",
+      "age": 27,
+      "gender": "m",
+      "area": "headquarters"
+    },
+    {
+      "name": "Frank",
+      "age": 35,
+      "gender": "m",
+      "area": "headquarters"
+    },
+    {
+      "name": "Sue",
+      "age": 32,
+      "gender": "f",
+      "area": "headquarters"
+    },
+    {
+      "name": "Jess",
+      "age": 41,
+      "gender": "f",
+      "area": "headquarters"
+    },
+    {
+      "name": "Carl",
+      "age": 23,
+      "gender": "m",
+      "area": "headquarters"
+    }
+  ]
+}
