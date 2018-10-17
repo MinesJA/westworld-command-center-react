@@ -4,13 +4,13 @@ import HostInfo from './HostInfo';
 import ColdStorage from './ColdStorage';
 
 
-const Headquarters = (props) => {
+const Headquarters = ({selectHost, hosts}) => {
 
 
   return(
     <Grid celled='internally'>
       <Grid.Column width={10}>
-        <ColdStorage hosts={props.hosts}/>
+        <ColdStorage hosts={hosts} selectHost={selectHost}/>
       </Grid.Column>
 
       <Grid.Column width={5}>

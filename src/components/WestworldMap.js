@@ -16,21 +16,24 @@ class WestworldMap extends Component {
       })
   }
 
-  renderAreas = () => (
-    this.state.areas.map( area =>
+  renderAreas = () => {
+
+    return this.state.areas.map( area =>
       <Area className="Area"
         className="area"
         areaName={area.name}
         key={area.name}
         style={area.style}
-        hosts={this.props.hosts}/>
+        hosts={this.props.hosts}
+        selectedHost={this.state.selectedHost}
+        selectHost={this.selectHost}
+      />
     )
-  )
+  }
 
 
 
   render(){
-    console.log(this.props.hosts)
     return (
       <Segment id="map" >
         {this.renderAreas()}

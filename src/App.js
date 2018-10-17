@@ -6,25 +6,45 @@ import Headquarters from './components/Headquarters'
 
 class App extends Component {
   state = {
-    activeHosts: [],
-    hosts: []
+    hosts: [],
+    selectedHost: {}
   }
 
   componentDidMount() {
 		fetch("http://localhost:3000/hosts")
 			.then(res => res.json())
-			.then(result => {
-        this.setState({hosts: result}, ()=>{console.log(this.state)})
+			.then(hosts => {
+        this.setState({hosts})
       })
 	}
 
+  selectHost = (host) => {
+    this.setState({
+      selectedHost: host
+    }, ()=>{console.log(this.state.selectedHost)})
+  }
 
+  renderActiveHosts = () => {
+    return this.state.hosts.filter( host => host.active )
+  }
+
+  renderDecomHosts = () => {
+    return this.state.hosts.filter( host => !host.active )
+  }
 
   render(){
     return (
       <Segment id='app'>
-        <WestworldMap hosts={this.state.hosts}/>
-        <Headquarters hosts={this.state.hosts}/>
+        <WestworldMap
+          hosts={this.renderActiveHosts()}
+          selectedHost={this.state.selectedHost}
+          selectHost={this.selectHost}
+        />
+        <Headquarters
+          hosts={this.renderDecomHosts()}
+          selectedHost={this.state.selectedHost}
+          selectHost={this.selectHost}
+        />
       </Segment>
     )
   }

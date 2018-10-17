@@ -2,7 +2,7 @@ import React from 'react';
 import HostList from './HostList';
 import { Segment, Container } from 'semantic-ui-react';
 
-const Area = ({areaName, style, hosts}) => {
+const Area = ({areaName, style, hosts, selectHost, selected}) => {
 
   const renderHosts = () => (
     hosts.filter( host => host.area == areaName )

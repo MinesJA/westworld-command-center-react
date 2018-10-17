@@ -19,7 +19,6 @@ class HostInfo extends Component{
 
   render(){
     const { value, areas } = this.state
-    console.log(value)
     return (
       <Segment>
         <Grid>

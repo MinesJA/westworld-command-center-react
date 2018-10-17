@@ -6,11 +6,15 @@ import HostList from './HostList'
 class ColdStorage extends Component {
 
   render(){
-    console.log(this.props.hosts)
+
     return(
       <Segment style={{height:'100%'}}>
         <h3>ColdStorage</h3>
-        <HostList hosts={this.props.hosts}/>
+        <HostList
+          hosts={this.props.hosts}
+          selectedHost={this.props.selectedHost}
+          selectHost={this.props.selectHost}
+        />
       </Segment>
     )
   }
