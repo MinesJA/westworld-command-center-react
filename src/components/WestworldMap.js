@@ -9,17 +9,16 @@ class WestworldMap extends Component {
   }
 
   componentDidMount(){
-    fetch("http://localhost:3000/areas")
+    fetch("http://localhost:4000/areas")
 			.then(res => res.json())
 			.then(result => {
-        this.setState({areas: result}, ()=>{console.log(this.state)})
+        this.setState({areas: result})
       })
   }
 
   renderAreas = () => {
-
     return this.state.areas.map( area =>
-      <Area className="Area"
+      <Area
         className="area"
         areaName={area.name}
         key={area.name}

@@ -1,5 +1,5 @@
-import React, { Component, Fragment } from 'react';
-import { Grid, Segment } from 'semantic-ui-react';
+import React, { Component } from 'react';
+import { Segment } from 'semantic-ui-react';
 import WestworldMap from './components/WestworldMap';
 import Headquarters from './components/Headquarters'
 
@@ -11,7 +11,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-		fetch("http://localhost:3000/hosts")
+		fetch("http://localhost:4000/hosts")
 			.then(res => res.json())
 			.then(hosts => {
         this.setState({hosts})
@@ -21,7 +21,7 @@ class App extends Component {
   selectHost = (host) => {
     this.setState({
       selectedHost: host
-    }, ()=>{console.log(this.state.selectedHost)})
+    })
   }
 
   renderActiveHosts = () => {

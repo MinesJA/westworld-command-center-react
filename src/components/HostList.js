@@ -1,4 +1,4 @@
-import React, { Component }  from 'react'
+import React from 'react'
 import { Card } from 'semantic-ui-react'
 import Host from './Host'
 
@@ -7,11 +7,10 @@ const HostList = ({hosts, selectedHost, selectHost}) => {
   return(
     <Card.Group itemsPerRow={6}>
       {hosts.map( host => {
-        console.log(selectedHost, host)
-        if(selectedHost == host){
-          return <Host host={host} selected selectHost={selectHost} />
+        if(selectedHost === host){
+          return <Host host={host} key={host.id} selected selectHost={selectHost} />
         }else{
-          return <Host host={host} selectHost={selectHost} />
+          return <Host host={host} key={host.id} selectHost={selectHost} />
         }
       })}
     </Card.Group>

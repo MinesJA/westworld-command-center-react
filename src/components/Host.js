@@ -1,14 +1,34 @@
-import React, { Component }  from 'react';
+import React from 'react';
 import { Card } from 'semantic-ui-react'
 
 const Host = ({selectHost, selected, host}) => {
 
   let { imageUrl } = host
-  let style = !!selected ? {width: "50px", border: "2px solid red", borderRadius: "5px"} : {width: "50px"}
+
+  const style = () => {
+    let style;
+
+    if(!!selected){
+      style = {
+        width: "50px",
+        height: "50px",
+        overflow: "hidden",
+        border: "2px solid red",
+        borderRadius: "5px",
+      }
+    }else{
+      style = {
+        width: "50px",
+        height: "50px",
+        overflow: "hidden"
+      }
+    }
+    return style
+  }
 
   return(
     <Card onClick={()=>{selectHost(host)}}
-      style={style}
+      style={style()}
       raised
       image={imageUrl}
     />

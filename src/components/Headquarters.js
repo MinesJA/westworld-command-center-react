@@ -1,11 +1,12 @@
 import React from 'react';
-import { Segment, Grid } from 'semantic-ui-react';
+import { Grid, Header } from 'semantic-ui-react';
 import HostInfo from './HostInfo';
 import ColdStorage from './ColdStorage';
 
 
 const Headquarters = ({selectHost, hosts}) => {
 
+  const rowStyle = {margin: "30px"}
 
   return(
     <Grid celled='internally'>

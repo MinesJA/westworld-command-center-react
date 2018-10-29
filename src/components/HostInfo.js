@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Radio, Icon, Card, Grid, Image, Dropdown, List, Segment, Divider } from 'semantic-ui-react'
+import { Radio, Icon, Card, Grid, Image, Dropdown, Segment, Divider } from 'semantic-ui-react'
 
 
 class HostInfo extends Component{

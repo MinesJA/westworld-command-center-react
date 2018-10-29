@@ -1,204 +1,204 @@
-{
-  "hosts": [
-    {
-      "firstName": "Dolores",
-      "lastName": "Abernathy",
-      "active": false,
-      "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/5/51/Dolores_Abernathy_Vanishing_Point.jpg/revision/latest?cb=20180613181613",
-      "gender": "Female",
-      "area": "high_plains"
-    },
-    {
-      "firstName": "Beranrd",
-      "lastName": "Lowe",
-      "active": false,
-      "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/b/b6/Bernard_Les_Ecorches.png/revision/latest/scale-to-width-down/310?cb=20180604190617",
-      "gender": "Male",
-      "area": "lowlands"
-    },
-    {
-      "firstName": "Maeve",
-      "lastName": "Millay",
-      "active": false,
-      "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/d/d8/Maeve_Les_Ecorches.jpg/revision/latest?cb=20180530183051",
-      "gender": "Female",
-      "area": "pariah"
-    },
-    {
-      "firstName": "Akecheta",
-      "lastName": "Kiksuya",
-      "active": false,
-      "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/8/82/Akecheta_Kiksuya.jpg/revision/latest?cb=20180607183222",
-      "gender": "Male",
-      "area": "python_pass"
-    },
-    {
-      "firstName": "Peter",
-      "lastName": "Abernathy",
-      "active": false,
-      "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/a/a2/Peter_Abernathy_%281%29.jpg/revision/latest?cb=20161024014816",
-      "gender": "Male",
-      "area": "badlands"
-    },
-    {
-      "firstName": "Angela",
-      "lastName": "n/a",
-      "active": false,
-      "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/b/b2/Angela_Reunion.jpg/revision/latest/scale-to-width-down/310?cb=20180509174920",
-      "gender": "Female",
-      "area": "high_plains"
-    },
-    {
-      "firstName": "Akane",
-      "lastName": "n/a",
-      "active": false,
-      "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/f/f3/Akane.jpg/revision/latest/scale-to-width-down/310?cb=20180520132523",
-      "gender": "Female",
-      "area": "lowlands"
-    },
-    {
-      "firstName": "Lawrence",
-      "lastName": "n/a",
-      "active": false,
-      "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/c/cb/Lawrence_Reunion.jpg/revision/latest/scale-to-width-down/310?cb=20180613182747",
-      "gender": "Male",
-      "area": "pariah"
-    },
-    {
-      "firstName": "Teddy",
-      "lastName": "Flood",
-      "active": false,
-      "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/a/a9/Teddy_Flood_Phase_Space.jpg/revision/latest/scale-to-width-down/310?cb=20180526115338",
-      "gender": "Male",
-      "area": "python_pass"
-    },
-    {
-      "firstName": "Clementine",
-      "lastName": "Pennyfeather",
-      "active": false,
-      "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/4/44/Clementine_The_Riddle_of_the_Sphinx.jpg/revision/latest?cb=20180516165617",
-      "gender": "Female",
-      "area": "badlands"
-    },
-    {
-      "firstName": "Armistice",
-      "lastName": "n/a",
-      "active": false,
-      "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/7/78/Armistice_Akane_No_Mai.jpg/revision/latest/scale-to-width-down/310?cb=20180517164314",
-      "gender": "Female",
-      "area": "high_plains"
-    },
-    {
-      "firstName": "Hector",
-      "lastName": "Escaton",
-      "active": false,
-      "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/7/78/Hector_Journey_Into_Night.jpg/revision/latest/scale-to-width-down/310?cb=20180613183102",
-      "gender": "Male",
-      "area": "lowlands"
-    },
-    {
-      "firstName": "Major",
-      "lastName": "Carddock",
-      "active": false,
-      "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/3/3b/Major_Craddock_The_Riddle_of_the_Sphinx.jpg/revision/latest?cb=20180511205852",
-      "gender": "Male",
-      "area": "pariah"
-    },
-    {
-      "firstName": "Rebus",
-      "lastName": "n/a",
-      "active": false,
-      "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/f/fe/203_Rebus.png/revision/latest/scale-to-width-down/310?cb=20180607104216",
-      "gender": "Male",
-      "area": "python_pass"
-    },
-    {
-      "firstName": "Musashi",
-      "lastName": "n/a",
-      "active": false,
-      "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/6/6b/Musashi_Akane_No_Mai.jpg/revision/latest/scale-to-width-down/310?cb=20180520131337",
-      "gender": "Male",
-      "area": "badlands"
-    }
-  ],
-  "areas": [
-    {
-      "name": "high_plains",
-      "limit": 8,
-      "style": {
-        "top": "20px",
-        "left": "315px",
-        "width": "300px",
-        "padding": "10px",
-        "minHeight": "200px",
-        "maxHeight": "200px",
-        "height": "100%"
+  {
+    "hosts": [
+      { "id": 1,
+        "firstName": "Dolores",
+        "lastName": "Abernathy",
+        "active": false,
+        "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/5/51/Dolores_Abernathy_Vanishing_Point.jpg/revision/latest?cb=20180613181613",
+        "gender": "Female",
+        "area": "high_plains"
+      },
+      { "id": 2,
+        "firstName": "Beranrd",
+        "lastName": "Lowe",
+        "active": false,
+        "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/b/b6/Bernard_Les_Ecorches.png/revision/latest/scale-to-width-down/310?cb=20180604190617",
+        "gender": "Male",
+        "area": "lowlands"
+      },
+      { "id": 3,
+        "firstName": "Maeve",
+        "lastName": "Millay",
+        "active": false,
+        "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/d/d8/Maeve_Les_Ecorches.jpg/revision/latest?cb=20180530183051",
+        "gender": "Female",
+        "area": "pariah"
+      },
+      { "id": 4,
+        "firstName": "Akecheta",
+        "lastName": "Kiksuya",
+        "active": false,
+        "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/8/82/Akecheta_Kiksuya.jpg/revision/latest?cb=20180607183222",
+        "gender": "Male",
+        "area": "python_pass"
+      },
+      { "id": 5,
+        "firstName": "Peter",
+        "lastName": "Abernathy",
+        "active": false,
+        "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/a/a2/Peter_Abernathy_%281%29.jpg/revision/latest?cb=20161024014816",
+        "gender": "Male",
+        "area": "badlands"
+      },
+      { "id": 6,
+        "firstName": "Angela",
+        "lastName": "n/a",
+        "active": false,
+        "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/b/b2/Angela_Reunion.jpg/revision/latest/scale-to-width-down/310?cb=20180509174920",
+        "gender": "Female",
+        "area": "high_plains"
+      },
+      { "id": 7,
+        "firstName": "Akane",
+        "lastName": "n/a",
+        "active": false,
+        "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/f/f3/Akane.jpg/revision/latest/scale-to-width-down/310?cb=20180520132523",
+        "gender": "Female",
+        "area": "lowlands"
+      },
+      { "id": 8,
+        "firstName": "Lawrence",
+        "lastName": "n/a",
+        "active": false,
+        "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/c/cb/Lawrence_Reunion.jpg/revision/latest/scale-to-width-down/310?cb=20180613182747",
+        "gender": "Male",
+        "area": "pariah"
+      },
+      { "id": 9,
+        "firstName": "Teddy",
+        "lastName": "Flood",
+        "active": false,
+        "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/a/a9/Teddy_Flood_Phase_Space.jpg/revision/latest/scale-to-width-down/310?cb=20180526115338",
+        "gender": "Male",
+        "area": "python_pass"
+      },
+      { "id": 10,
+        "firstName": "Clementine",
+        "lastName": "Pennyfeather",
+        "active": false,
+        "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/4/44/Clementine_The_Riddle_of_the_Sphinx.jpg/revision/latest?cb=20180516165617",
+        "gender": "Female",
+        "area": "badlands"
+      },
+      { "id": 11,
+        "firstName": "Armistice",
+        "lastName": "n/a",
+        "active": false,
+        "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/7/78/Armistice_Akane_No_Mai.jpg/revision/latest/scale-to-width-down/310?cb=20180517164314",
+        "gender": "Female",
+        "area": "high_plains"
+      },
+      { "id": 12,
+        "firstName": "Hector",
+        "lastName": "Escaton",
+        "active": false,
+        "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/7/78/Hector_Journey_Into_Night.jpg/revision/latest/scale-to-width-down/310?cb=20180613183102",
+        "gender": "Male",
+        "area": "lowlands"
+      },
+      { "id": 13,
+        "firstName": "Major",
+        "lastName": "Carddock",
+        "active": false,
+        "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/3/3b/Major_Craddock_The_Riddle_of_the_Sphinx.jpg/revision/latest?cb=20180511205852",
+        "gender": "Male",
+        "area": "pariah"
+      },
+      { "id": 14,
+        "firstName": "Rebus",
+        "lastName": "n/a",
+        "active": false,
+        "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/f/fe/203_Rebus.png/revision/latest/scale-to-width-down/310?cb=20180607104216",
+        "gender": "Male",
+        "area": "python_pass"
+      },
+      { "id": 15,
+        "firstName": "Musashi",
+        "lastName": "n/a",
+        "active": false,
+        "imageUrl": "https://vignette.wikia.nocookie.net/westworld/images/6/6b/Musashi_Akane_No_Mai.jpg/revision/latest/scale-to-width-down/310?cb=20180520131337",
+        "gender": "Male",
+        "area": "badlands"
       }
-    },
-    {
-      "name": "lowlands",
-      "limit": 6,
-      "style": {
-        "top": "225px",
-        "left": "360px",
-        "width": "265px",
-        "padding": "10px",
-        "minHeight": "190px",
-        "maxHeight": "190px",
-        "height": "100%"
+    ],
+    "areas": [
+      { "id": 1,
+        "name": "high_plains",
+        "limit": 8,
+        "style": {
+          "top": "20px",
+          "left": "315px",
+          "width": "300px",
+          "padding": "10px",
+          "minHeight": "200px",
+          "maxHeight": "200px",
+          "height": "100%"
+        }
+      },
+      { "id": 2,
+        "name": "lowlands",
+        "limit": 6,
+        "style": {
+          "top": "225px",
+          "left": "360px",
+          "width": "265px",
+          "padding": "10px",
+          "minHeight": "190px",
+          "maxHeight": "190px",
+          "height": "100%"
+        }
+      },
+      { "id": 3,
+        "name": "under_construction",
+        "limit": 8,
+        "style": {
+          "top": "425px",
+          "left": "350px",
+          "width": "300px",
+          "padding": "10px",
+          "minHeight": "200px",
+          "maxHeight": "200px",
+          "height": "100%"
+        }
+      },
+      { "id": 4,
+        "name": "pariah",
+        "limit": 14,
+        "style": {
+          "top": "450px",
+          "left": "680px",
+          "width": "500px",
+          "padding": "10px",
+          "minHeight": "185px",
+          "maxHeight": "185px",
+          "height": "100%"
+        }
+      },
+      { "id": 5,
+        "name": "python_pass",
+        "limit": 14,
+        "style": {
+          "top": "10px",
+          "left": "660px",
+          "width": "500px",
+          "padding": "10px",
+          "minHeight": "185px",
+          "maxHeight": "185px",
+          "height": "100%"
+        }
+      },
+      { "id": 6,
+        "name": "badlands",
+        "limit": 10,
+        "style": {
+          "top": "225px",
+          "left": "700px",
+          "width": "400px",
+          "padding": "10px",
+          "minHeight": "175px",
+          "maxHeight": "175px",
+          "height": "100%"
+        }
       }
-    },
-    {
-      "name": "under_construction",
-      "limit": 8,
-      "style": {
-        "top": "425px",
-        "left": "350px",
-        "width": "300px",
-        "padding": "10px",
-        "minHeight": "200px",
-        "maxHeight": "200px",
-        "height": "100%"
-      }
-    },
-    {
-      "name": "pariah",
-      "limit": 14,
-      "style": {
-        "top": "450px",
-        "left": "680px",
-        "width": "500px",
-        "padding": "10px",
-        "minHeight": "185px",
-        "maxHeight": "185px",
-        "height": "100%"
-      }
-    },
-    {
-      "name": "python_pass",
-      "limit": 14,
-      "style": {
-        "top": "10px",
-        "left": "660px",
-        "width": "500px",
-        "padding": "10px",
-        "minHeight": "185px",
-        "maxHeight": "185px",
-        "height": "100%"
-      }
-    },
-    {
-      "name": "badlands",
-      "limit": 10,
-      "style": {
-        "top": "225px",
-        "left": "700px",
-        "width": "400px",
-        "padding": "10px",
-        "minHeight": "175px",
-        "maxHeight": "175px",
-        "height": "100%"
-      }
-    }
-  ]
-}
+    ]
+  }
