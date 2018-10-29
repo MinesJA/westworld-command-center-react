@@ -3,6 +3,12 @@ import { Radio, Icon, Card, Grid, Image, Dropdown, Segment, Divider } from 'sema
 
 
 class HostInfo extends Component{
+  constructor(props){
+    super(props)
+    state: {
+      
+    }
+  }
   state = {
     checked: false,
     value: "Area one",

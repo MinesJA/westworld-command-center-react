@@ -7,7 +7,8 @@ import Headquarters from './components/Headquarters'
 class App extends Component {
   state = {
     hosts: [],
-    selectedHost: {}
+    areas: [],
+    selectedHostId: null
   }
 
   componentDidMount() {
@@ -16,12 +17,17 @@ class App extends Component {
 			.then(hosts => {
         this.setState({hosts})
       })
+      .then( () => {
+        fetch("http://localhost:4000/areas")
+    			.then(res => res.json())
+    			.then(areas => {
+            this.setState({areas})
+          })
+      })
 	}
 
-  selectHost = (host) => {
-    this.setState({
-      selectedHost: host
-    })
+  selectHost = (selectedHostId) => {
+    this.setState({selectedHostId})
   }
 
   renderActiveHosts = () => {
@@ -32,18 +38,28 @@ class App extends Component {
     return this.state.hosts.filter( host => !host.active )
   }
 
+  formatAreas = () => {
+    return this.state.areas.map( area => {
+      area["formatName"] = area.name.split("_").map( word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")
+
+      return area
+    })
+  }
+
   render(){
     return (
       <Segment id='app'>
         <WestworldMap
           hosts={this.renderActiveHosts()}
-          selectedHost={this.state.selectedHost}
+          selectedHostId={this.state.selectedHostId}
           selectHost={this.selectHost}
+          areas={this.formatAreas()}
         />
         <Headquarters
           hosts={this.renderDecomHosts()}
-          selectedHost={this.state.selectedHost}
+          selectedHostId={this.state.selectedHostId}
           selectHost={this.selectHost}
+          areas={this.formatAreas()}
         />
       </Segment>
     )

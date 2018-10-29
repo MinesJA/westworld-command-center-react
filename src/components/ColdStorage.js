@@ -3,21 +3,18 @@ import { Segment } from 'semantic-ui-react'
 import HostList from './HostList'
 
 
-class ColdStorage extends Component {
+const ColdStorage = ({hosts, selectedHostId, selectHost}) => {
 
-  render(){
-    return(
-      <Segment>
-        <h3 className="labels">ColdStorage</h3>
-        <HostList
-          hosts={this.props.hosts}
-          selectedHost={this.props.selectedHost}
-          selectHost={this.props.selectHost}
-        />
-      </Segment>
-    )
-  }
-
+  return(
+    <Segment>
+      <h3 className="labels">ColdStorage</h3>
+      <HostList
+        hosts={hosts}
+        selectedHostId={selectedHostId}
+        selectHost={selectHost}
+      />
+    </Segment>
+  )
 }
 
 export default ColdStorage

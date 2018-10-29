@@ -2,17 +2,21 @@ import React from 'react'
 import { Card } from 'semantic-ui-react'
 import Host from './Host'
 
-const HostList = ({hosts, selectedHost, selectHost}) => {
+const HostList = ({ hosts, selectHost, selectedHostId }) => {
+
+  const renderHosts = () => (
+    hosts.map( ({id, imageUrl }) => {
+      if(selectedHostId === id){
+        return <Host imageUrl={imageUrl} id={id} key={id} selectHost={selectHost} selected />
+      }else{
+        return <Host imageUrl={imageUrl} id={id} key={id} selectHost={selectHost} />
+      }
+    })
+  )
 
   return(
     <Card.Group itemsPerRow={6}>
-      {hosts.map( host => {
-        if(selectedHost === host){
-          return <Host host={host} key={host.id} selected selectHost={selectHost} />
-        }else{
-          return <Host host={host} key={host.id} selectHost={selectHost} />
-        }
-      })}
+      {renderHosts()}
     </Card.Group>
   )
 }

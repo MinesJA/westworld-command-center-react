@@ -1,44 +1,31 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Area from './Area.js';
 import { Segment } from 'semantic-ui-react';
 
 
-class WestworldMap extends Component {
-  state = {
-    areas: []
-  }
+const WestworldMap = ({areas, hosts, selectedHostId, selectHost}) => {
 
-  componentDidMount(){
-    fetch("http://localhost:4000/areas")
-			.then(res => res.json())
-			.then(result => {
-        this.setState({areas: result})
-      })
-  }
-
-  renderAreas = () => {
-    return this.state.areas.map( area =>
+  const renderAreas = () => {
+    return areas.map( ({ name, formatName, limit, style }) =>
       <Area
         className="area"
-        areaName={area.name}
-        key={area.name}
-        style={area.style}
-        hosts={this.props.hosts}
-        selectedHost={this.state.selectedHost}
-        selectHost={this.selectHost}
+        name={name}
+        formatName={formatName}
+        limit={limit}
+        key={name}
+        style={style}
+        hosts={hosts}
+        selectedHostId={selectedHostId}
+        selectHost={selectHost}
       />
     )
   }
-
-
-
-  render(){
-    return (
-      <Segment id="map" >
-        {this.renderAreas()}
-      </Segment>
-    )
-  }
+  
+  return (
+    <Segment id="map" >
+      {renderAreas()}
+    </Segment>
+  )
 }
 
 export default WestworldMap;

@@ -4,18 +4,24 @@ import HostInfo from './HostInfo';
 import ColdStorage from './ColdStorage';
 
 
-const Headquarters = ({selectHost, hosts}) => {
-
-  const rowStyle = {margin: "30px"}
+const Headquarters = ({areas, hosts, selectedHostId, selectHost}) => {
 
   return(
     <Grid celled='internally'>
       <Grid.Column width={10}>
-        <ColdStorage hosts={hosts} selectHost={selectHost}/>
+        <ColdStorage
+          hosts={hosts}
+          selectHost={selectHost}
+          selectedHostId={selectedHostId}
+        />
       </Grid.Column>
 
       <Grid.Column width={5}>
-        <HostInfo />
+        <HostInfo
+          areas={areas}
+          hosts={hosts}
+          selectedHostId={selectedHostId}
+        />
       </Grid.Column>
     </Grid>
   )
