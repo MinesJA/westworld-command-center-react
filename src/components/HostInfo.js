@@ -4,19 +4,11 @@ import { Radio, Icon, Card, Grid, Image, Dropdown, Segment, Divider } from 'sema
 
 class HostInfo extends Component{
   constructor(props){
-    super(props)
-    state: {
-      
-    }
-  }
-  state = {
-    checked: false,
-    value: "Area one",
-    areas: [
-      {key: 'area1', text: 'area1', value: 'Area one'},
-      {key: 'area2', text: 'area2', value: 'Area two'},
-      {key: 'area3', text: 'area3', value: 'Area three'}
-    ]
+    super(props);
+    this.state = {
+        value: "hey",
+        areas: props.formatAreas
+      }
   }
 
   handleChange = (e, {value}) => this.setState({value})
@@ -25,35 +17,36 @@ class HostInfo extends Component{
 
   render(){
     const { value, areas } = this.state
+    const { id, firstName, lastName, imageUrl, gender, active } = this.props.selectedHost
+    console.log(this.props.selectedHost)
     return (
-      <Segment>
-        <Grid>
-          <Grid.Column width={6}>
-            <Image floated='left' size='small' src='https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/westworld-james.jpg'/>
-          </Grid.Column>
-          <Grid.Column width={10}>
-            <Card>
-              <Card.Content>
-                <Card.Header>
-                  Teddy Flood <Icon name='man' />
-                </Card.Header>
-                <Card.Meta>
-                  <Radio style={{margin: "10px"}} slider onChange={this.toggle} label={this.state.checked ? "Active" : "Decommissioned"} checked={this.state.checked}/>
-                </Card.Meta>
+      <Grid>
+        <Grid.Column width={6}>
+          <Image style={{overflow: "hidden", height: "160px", width: "130px"}} floated='left' size='small' src={imageUrl}/>
+        </Grid.Column>
+        <Grid.Column width={10}>
+          <Card>
+            <Card.Content>
+              <Card.Header>
+                {firstName} | {gender === "Male" ? <Icon name='man' /> : <Icon name='woman' />}
+              </Card.Header>
+              <Card.Meta>
+                <Radio style={{margin: "10px"}} slider onChange={this.toggle} label={active ? "Active" : "Decommissioned"} checked={active}/>
+              </Card.Meta>
 
-                <Divider />
-                Current Area:
-                <Dropdown
-                  onChange={this.handleChange}
-                  value={value}
-                  selection
-                  options={areas} />
-
-              </Card.Content>
-            </Card>
-          </Grid.Column>
-        </Grid>
-      </Segment>
+              <Divider />
+              Current Area:
+              <Dropdown
+                onChange={this.handleChange}
+                value={value}
+                selection
+                options={areas}
+                style={{zIndex: "2"}}
+              />
+            </Card.Content>
+          </Card>
+        </Grid.Column>
+      </Grid>
     )
   }
 }

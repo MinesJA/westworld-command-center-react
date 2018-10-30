@@ -6,14 +6,18 @@ import HostList from './HostList'
 const ColdStorage = ({hosts, selectedHostId, selectHost}) => {
 
   return(
-    <Segment>
-      <h3 className="labels">ColdStorage</h3>
-      <HostList
-        hosts={hosts}
-        selectedHostId={selectedHostId}
-        selectHost={selectHost}
-      />
-    </Segment>
+    <Segment.Group className="HQComps">
+      <Segment compact>
+        <h3 className="labels">ColdStorage</h3>
+      </Segment>
+      <Segment compact>
+        <HostList
+          hosts={hosts}
+          selectedHostId={selectedHostId}
+          selectHost={selectHost}
+        />
+      </Segment>
+    </Segment.Group>
   )
 }
 

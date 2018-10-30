@@ -27,7 +27,7 @@ class App extends Component {
 	}
 
   selectHost = (selectedHostId) => {
-    this.setState({selectedHostId})
+    this.setState({selectedHostId}, ()=>{console.log(selectedHostId)})
   }
 
   renderActiveHosts = () => {
