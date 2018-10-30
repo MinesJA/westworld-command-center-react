@@ -1,24 +1,32 @@
 import React, { Component } from 'react'
-import { Radio, Icon, Card, Grid, Image, Dropdown, Segment, Divider } from 'semantic-ui-react'
+import { Radio, Icon, Card, Grid, Image, Dropdown, Divider } from 'semantic-ui-react'
 
 
 class HostInfo extends Component{
-  constructor(props){
-    super(props);
-    this.state = {
-        value: "hey",
-        areas: props.formatAreas
-      }
+  state = {
+      value: this.props.selectedHost.area,
+      areas: this.props.formatAreas,
+      active: this.props.active
+    }
+
+  componentDidUpdate(prevProps, prevState){
+    if(this.props.selectedHost !== prevProps.selectedHost){
+      this.setState({value: this.props.selectedHost.area})
+    }
   }
+
 
   handleChange = (e, {value}) => this.setState({value})
 
-  toggle = () => this.setState({checked: !this.state.checked})
+  toggle = () => {
+    this.setState({active: !this.state.active})
+
+    this.props.activateHost(this.props.selectedHost.id)
+  }
 
   render(){
-    const { value, areas } = this.state
-    const { id, firstName, lastName, imageUrl, gender, active } = this.props.selectedHost
-    console.log(this.props.selectedHost)
+    const { value, areas, active } = this.state
+    const { firstName, imageUrl, gender } = this.props.selectedHost
     return (
       <Grid>
         <Grid.Column width={6}>
@@ -41,7 +49,6 @@ class HostInfo extends Component{
                 value={value}
                 selection
                 options={areas}
-                style={{zIndex: "2"}}
               />
             </Card.Content>
           </Card>

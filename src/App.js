@@ -27,7 +27,7 @@ class App extends Component {
 	}
 
   selectHost = (selectedHostId) => {
-    this.setState({selectedHostId}, ()=>{console.log(selectedHostId)})
+    this.setState({selectedHostId})
   }
 
   renderActiveHosts = () => {
@@ -46,6 +46,17 @@ class App extends Component {
     })
   }
 
+  activateHost = (id) => {
+    this.setState( state => {
+      state.hosts.forEach( host => {
+        if(host.id === id){
+          host.active = !host.active
+        }
+      })
+      return {hosts: state.hosts}
+    })
+  }
+
   render(){
     return (
       <Segment id='app'>
@@ -56,6 +67,7 @@ class App extends Component {
           areas={this.formatAreas()}
         />
         <Headquarters
+          activateHost={this.activateHost}
           hosts={this.renderDecomHosts()}
           selectedHostId={this.state.selectedHostId}
           selectHost={this.selectHost}

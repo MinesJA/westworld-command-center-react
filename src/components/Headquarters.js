@@ -1,14 +1,14 @@
 import React from 'react';
-import { Grid, Header } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 import Details from './Details';
 import ColdStorage from './ColdStorage';
 
 
-const Headquarters = ({ areas, hosts, selectedHostId, selectHost }) => {
+const Headquarters = ({ areas, hosts, selectedHostId, selectHost, activateHost }) => {
 
   const formatAreas = () => {
     let newAreas = areas.map( ({ name, formatName }) => {
-      return {key: name, text: name, value: formatName}
+      return {key: name, text: formatName, value: name}
     })
     return newAreas
   }
@@ -28,6 +28,7 @@ const Headquarters = ({ areas, hosts, selectedHostId, selectHost }) => {
       </Grid.Column>
       <Grid.Column width={5}>
         <Details
+          activateHost={activateHost}
           selectedHost={selectedHost()}
           formatAreas={formatAreas()}
         />
