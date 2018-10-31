@@ -1,8 +1,13 @@
 # Westworld Command Center
 
+Overview
+========
+The Executives at Delos Inc. need you to help them build some software for their new theme park: WestWorld. WestWorld is an interactive theme park where guests get to experience life in the Wild Wild West with the help of some AI known as "Hosts". But WestWorld needs a way to deploy these hosts to different areas of the park and bring them back to "Cold Storage" where they can be repaired or retired. Your job is to create a React based interface that allows you to select Hosts, activate them, and send them to any area the park or call them back to Cold Storage.
+
+
 DB
 ==
-Run `json-server --watch db.json --port 3001` to start the server on port 3001 (so you can run React on port 3000 simultaneously).
+Run `json-server --watch db.json --port 3001` to start the server on port 4000 (so you can run React on port 4000 simultaneously).
 
 Endpoints:
 1. GET /hosts
@@ -10,8 +15,13 @@ Endpoints:
 
 
 
+
+Layout
+======
+A number of components have already been built for you. You can start with the first two components branching
+
 Rules
-========
+=====
 Hosts
 1. Clicking a Host selects them on the map and displays their information in the info box in the bottom right corner. If a Host is selected, clicking a different Host should de-select the previous Host (only one selected Host at a time).
 2. Hosts can either exist in one of the many areas, or in Cold Storage.
