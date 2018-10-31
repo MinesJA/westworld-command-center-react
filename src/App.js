@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Segment } from 'semantic-ui-react';
 import WestworldMap from './components/WestworldMap';
 import Headquarters from './components/Headquarters'
-
+import { Adapter } from './Adapter'
 
 class App extends Component {
   state = {
@@ -12,14 +12,13 @@ class App extends Component {
   }
 
   componentDidMount() {
-		fetch("http://localhost:4000/hosts")
-			.then(res => res.json())
+
+    Adapter.fetchHosts()
 			.then(hosts => {
         this.setState({hosts})
       })
       .then( () => {
-        fetch("http://localhost:4000/areas")
-    			.then(res => res.json())
+        Adapter.fetchAreas()
     			.then(areas => {
             this.setState({areas})
           })
@@ -34,15 +33,24 @@ class App extends Component {
     return this.state.hosts.filter( host => host.active )
   }
 
-  renderDecomHosts = () => {
-    return this.state.hosts.filter( host => !host.active )
-  }
+
 
   formatAreas = () => {
     return this.state.areas.map( area => {
       area["formatName"] = area.name.split("_").map( word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")
 
       return area
+    })
+  }
+
+  setArea = (id, area) => {
+    this.setState( state => {
+      state.hosts.forEach( host => {
+        if(host.id === id){
+          host.area = area
+        }
+      })
+      return {hosts: state.hosts}
     })
   }
 
@@ -68,10 +76,11 @@ class App extends Component {
         />
         <Headquarters
           activateHost={this.activateHost}
-          hosts={this.renderDecomHosts()}
+          hosts={this.state.hosts}
           selectedHostId={this.state.selectedHostId}
           selectHost={this.selectHost}
           areas={this.formatAreas()}
+          setArea={this.setArea}
         />
       </Segment>
     )

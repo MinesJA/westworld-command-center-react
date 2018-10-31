@@ -1,27 +1,30 @@
 import React from 'react';
-import { Grid } from 'semantic-ui-react';
+import { Grid, Button } from 'semantic-ui-react';
 import Details from './Details';
 import ColdStorage from './ColdStorage';
 
 
-const Headquarters = ({ areas, hosts, selectedHostId, selectHost, activateHost }) => {
+const Headquarters = ({ areas, hosts, selectedHostId, selectHost, activateHost, setArea }) => {
 
   const formatAreas = () => {
-    let newAreas = areas.map( ({ name, formatName }) => {
-      return {key: name, text: formatName, value: name}
-    })
-    return newAreas
+    return areas.map( ({ name, formatName }) => (
+      {key: name, text: formatName, value: name}
+    ))
   }
 
   const selectedHost = () => {
     return hosts.find( host => host.id === selectedHostId)
   }
 
+  const renderDecomHosts = () => {
+    return hosts.filter( host => !host.active )
+  }
+
   return(
-    <Grid celled='internally' centered>
-      <Grid.Column width={10}>
+    <Grid celled='internally'>
+      <Grid.Column width={8}>
         <ColdStorage
-          hosts={hosts}
+          hosts={renderDecomHosts()}
           selectHost={selectHost}
           selectedHostId={selectedHostId}
         />
@@ -31,7 +34,11 @@ const Headquarters = ({ areas, hosts, selectedHostId, selectHost, activateHost }
           activateHost={activateHost}
           selectedHost={selectedHost()}
           formatAreas={formatAreas()}
+          setArea={setArea}
         />
+      </Grid.Column>
+      <Grid.Column>
+        <Button/>
       </Grid.Column>
     </Grid>
   )

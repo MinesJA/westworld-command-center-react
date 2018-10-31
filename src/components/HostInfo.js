@@ -6,17 +6,23 @@ class HostInfo extends Component{
   state = {
       value: this.props.selectedHost.area,
       areas: this.props.formatAreas,
-      active: this.props.active
+      active: this.props.selectedHost.active
     }
 
   componentDidUpdate(prevProps, prevState){
     if(this.props.selectedHost !== prevProps.selectedHost){
-      this.setState({value: this.props.selectedHost.area})
+      this.setState({
+        value: this.props.selectedHost.area,
+        active: this.props.selectedHost.active
+      })
     }
   }
 
+  handleChange = (e, {value}) => {
+    this.setState({value})
 
-  handleChange = (e, {value}) => this.setState({value})
+    this.props.setArea(this.props.selectedHost.id, value)
+  }
 
   toggle = () => {
     this.setState({active: !this.state.active})
@@ -27,6 +33,7 @@ class HostInfo extends Component{
   render(){
     const { value, areas, active } = this.state
     const { firstName, imageUrl, gender } = this.props.selectedHost
+    console.log(active)
     return (
       <Grid>
         <Grid.Column width={6}>
