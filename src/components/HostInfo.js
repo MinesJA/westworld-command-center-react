@@ -33,7 +33,6 @@ class HostInfo extends Component{
   render(){
     const { value, areas, active } = this.state
     const { firstName, imageUrl, gender } = this.props.selectedHost
-    console.log(active)
     return (
       <Grid>
         <Grid.Column width={6}>

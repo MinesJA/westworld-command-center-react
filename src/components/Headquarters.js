@@ -1,10 +1,11 @@
 import React from 'react';
-import { Grid, Button } from 'semantic-ui-react';
+import { Grid, Button, Segment } from 'semantic-ui-react';
 import Details from './Details';
 import ColdStorage from './ColdStorage';
+import LogPanel from './LogPanel';
 
 
-const Headquarters = ({ areas, hosts, selectedHostId, selectHost, activateHost, setArea }) => {
+const Headquarters = ({ areas, hosts, selectedHostId, selectHost, activateHost, setArea, activateAll }) => {
 
   const formatAreas = () => {
     return areas.map( ({ name, formatName }) => (
@@ -37,8 +38,10 @@ const Headquarters = ({ areas, hosts, selectedHostId, selectHost, activateHost, 
           setArea={setArea}
         />
       </Grid.Column>
-      <Grid.Column>
-        <Button/>
+      <Grid.Column width={3}>
+        <LogPanel
+          activateAll={activateAll}
+        />
       </Grid.Column>
     </Grid>
   )

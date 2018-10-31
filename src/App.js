@@ -25,6 +25,15 @@ class App extends Component {
       })
 	}
 
+  activateAll = (activated) => {
+    this.setState( state =>
+      state.hosts.map( host => {
+        host.active = activated
+        return host
+      })
+    )
+  }
+
   selectHost = (selectedHostId) => {
     this.setState({selectedHostId})
   }
@@ -81,6 +90,7 @@ class App extends Component {
           selectHost={this.selectHost}
           areas={this.formatAreas()}
           setArea={this.setArea}
+          activateAll={this.activateAll}
         />
       </Segment>
     )
