@@ -14,11 +14,17 @@ Endpoints:
 2. GET /areas
 
 
+Video Demo: https://youtu.be/NXP-mNpUTYU
 
 
 Layout
 ======
-A number of components have already been built for you. You can start with the first two components branching
+
+A number of components have already been built for you. You can start with the first two components branching from App:
+1) WestWorldMap
+2) Headquarters
+
+Think of what the best way to lay out the rest is.
 
 Rules
 =====
