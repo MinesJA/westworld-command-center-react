@@ -6,13 +6,13 @@ import { Segment } from 'semantic-ui-react';
 const WestworldMap = ({areas, hosts, selectedHostId, selectHost}) => {
 
   const renderAreas = () => {
-    return areas.map( ({ name, formatName, limit, style }) =>
+    return areas.map( ({ namesObject: {text, value}, formatName, limit, style }) =>
       <Area
         className="area"
-        name={name}
-        formatName={formatName}
+        value={value}
+        name={text}
         limit={limit}
-        key={name}
+        key={value}
         style={style}
         hosts={hosts}
         selectedHostId={selectedHostId}
@@ -20,7 +20,7 @@ const WestworldMap = ({areas, hosts, selectedHostId, selectHost}) => {
       />
     )
   }
-  
+
   return (
     <Segment id="map" >
       {renderAreas()}

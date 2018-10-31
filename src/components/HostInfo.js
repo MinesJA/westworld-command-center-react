@@ -5,7 +5,7 @@ import { Radio, Icon, Card, Grid, Image, Dropdown, Divider } from 'semantic-ui-r
 class HostInfo extends Component{
   state = {
       value: this.props.selectedHost.area,
-      areas: this.props.formatAreas,
+      areas: this.props.areas,
       active: this.props.selectedHost.active
     }
 

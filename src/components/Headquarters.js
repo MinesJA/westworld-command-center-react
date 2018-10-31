@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Button, Segment } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 import Details from './Details';
 import ColdStorage from './ColdStorage';
 import LogPanel from './LogPanel';
@@ -7,19 +7,9 @@ import LogPanel from './LogPanel';
 
 const Headquarters = ({ areas, hosts, selectedHostId, selectHost, activateHost, setArea, activateAll }) => {
 
-  const formatAreas = () => {
-    return areas.map( ({ name, formatName }) => (
-      {key: name, text: formatName, value: name}
-    ))
-  }
+  const selectedHost = () => hosts.find( host => host.id === selectedHostId )
 
-  const selectedHost = () => {
-    return hosts.find( host => host.id === selectedHostId)
-  }
-
-  const renderDecomHosts = () => {
-    return hosts.filter( host => !host.active )
-  }
+  const renderDecomHosts = () => hosts.filter( host => !host.active )
 
   return(
     <Grid celled='internally'>
@@ -34,7 +24,7 @@ const Headquarters = ({ areas, hosts, selectedHostId, selectHost, activateHost, 
         <Details
           activateHost={activateHost}
           selectedHost={selectedHost()}
-          formatAreas={formatAreas()}
+          areas={areas}
           setArea={setArea}
         />
       </Grid.Column>

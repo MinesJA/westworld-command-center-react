@@ -11,16 +11,13 @@ class App extends Component {
     selectedHostId: null
   }
 
-  componentDidMount() {
-
+  componentDidMount(){
     Adapter.fetchHosts()
 			.then(hosts => {
-        this.setState({hosts})
-      })
-      .then( () => {
         Adapter.fetchAreas()
     			.then(areas => {
-            this.setState({areas})
+            console.log(areas)
+            this.setState({hosts, areas})
           })
       })
 	}
@@ -34,42 +31,34 @@ class App extends Component {
     )
   }
 
-  selectHost = (selectedHostId) => {
-    this.setState({selectedHostId})
-  }
+  selectHost = (selectedHostId) => { this.setState({selectedHostId}) }
 
-  renderActiveHosts = () => {
-    return this.state.hosts.filter( host => host.active )
-  }
+  renderActiveHosts = () => this.state.hosts.filter( host => host.active )
 
 
-
-  formatAreas = () => {
-    return this.state.areas.map( area => {
-      area["formatName"] = area.name.split("_").map( word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")
-
-      return area
-    })
-  }
 
   setArea = (id, area) => {
     this.setState( state => {
+
       state.hosts.forEach( host => {
         if(host.id === id){
           host.area = area
         }
       })
+
       return {hosts: state.hosts}
     })
   }
 
   activateHost = (id) => {
     this.setState( state => {
+
       state.hosts.forEach( host => {
         if(host.id === id){
           host.active = !host.active
         }
       })
+
       return {hosts: state.hosts}
     })
   }
@@ -81,14 +70,14 @@ class App extends Component {
           hosts={this.renderActiveHosts()}
           selectedHostId={this.state.selectedHostId}
           selectHost={this.selectHost}
-          areas={this.formatAreas()}
+          areas={this.state.areas}
         />
         <Headquarters
           activateHost={this.activateHost}
           hosts={this.state.hosts}
           selectedHostId={this.state.selectedHostId}
           selectHost={this.selectHost}
-          areas={this.formatAreas()}
+          areas={this.state.areas}
           setArea={this.setArea}
           activateAll={this.activateAll}
         />
