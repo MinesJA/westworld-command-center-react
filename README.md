@@ -53,6 +53,6 @@ Deliverables
 5. Setting a hosts toggle to Decommissioned should immediately remove them from their area and place them in ColdStorage.
 
 **Activate All Button**
-1. Clicking the `Activate All` button should set all hosts active status to true.
+1. Clicking the `ACTIVATE ALL` button should set all hosts active status to true.
 2. Once the Activate All button has been clicked, the button should switch from `red` to `green` and should read `DECOMMISSION ALL`.
 3. Clicking the `DECOMMISSION ALL` button should set all hosts active status to false and revert the button back to the `red` `ACTIVATE ALL` button.
