@@ -22,6 +22,7 @@ const Area = ({ value, name, limit, hosts, selectHost, selectedHostId }) => {
 Area.propTypes = {
   hosts: function(props, propName, componentName){
     if(props.hosts.length > props.limit){
+      alert("TOO MANY HOSTS")
       return new Error(
         'TOO MANY HOSTS WHATR YA CRAZYYZ?!!'
       )
