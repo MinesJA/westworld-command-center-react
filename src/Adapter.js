@@ -25,7 +25,3 @@ export class Adapter {
 
 
 }
-
-
-// Adapter.fetchHosts
-// Adapter.fetchAreas

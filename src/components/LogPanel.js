@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Segment, Button } from 'semantic-ui-react';
+import { Segment, Button, Message } from 'semantic-ui-react';
 
 
 class LogPanel extends Component{
@@ -21,9 +21,10 @@ class LogPanel extends Component{
     const text = activated ? "DECOMMISSION ALL" : "ACTIVATE ALL"
     return(
       <Segment className="HQComps" id="logPanel">
-        <pre style={{height: 150, overflowY: 'scroll'}}>
-          {events.map((e, i)=> <p key={i}>{e}</p>)}
-        </pre>
+        <Message>
+          <Message.Header>Hey</Message.Header>
+          <Message.List items={["Heress soem sinfo", "And some more info!!"]} />
+        </Message>
         <Button fluid color={color} onClick={this.handleClick}>{text}</Button>
       </Segment>
     )
