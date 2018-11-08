@@ -2,22 +2,18 @@ import React from 'react';
 import HostList from './HostList';
 import PropTypes from 'prop-types';
 
-const Area = ({ value, name, limit, hosts, selectHost, selectedHostId }) => {
+const Area = ({ value, name, limit, hosts, selectHost, selectedHostId }) => (
+  <div className='area' id={value}>
+    <h3 className='labels'>{name}</h3>
+    <HostList
+      hosts={hosts}
+      selectHost={selectHost}
+      selectedHostId={selectedHostId}
+      limit={limit}
+    />
+  </div>
+)
 
-
-
-  return(
-    <div className='area' id={value}>
-      <h3 className='labels'>{name}</h3>
-      <HostList
-        hosts={hosts}
-        selectHost={selectHost}
-        selectedHostId={selectedHostId}
-        limit={limit}
-      />
-    </div>
-  )
-}
 
 Area.propTypes = {
   hosts: function(props, propName, componentName){
