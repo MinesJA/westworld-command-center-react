@@ -13,6 +13,7 @@ const WestworldMap = ({areas, hosts, selectedHostId, selectHost}) => {
         name={text}
         limit={limit}
         key={value}
+        
         style={style}
         hosts={hosts}
         selectedHostId={selectedHostId}

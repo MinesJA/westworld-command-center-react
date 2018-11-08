@@ -1,9 +1,0 @@
-.Map {
-  position: relative;
-}
-
-.Area {
-    border: 2px solid #334CFF;
-    border-radius: 3px;
-    z-index: 0;
-}

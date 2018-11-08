@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Segment } from 'semantic-ui-react';
 import WestworldMap from './components/WestworldMap';
 import Headquarters from './components/Headquarters'
-import { Adapter } from './Adapter'
+import { Adapter, Format } from './services/Service'
 
 class App extends Component {
   state = {
@@ -12,15 +12,16 @@ class App extends Component {
   }
 
   componentDidMount(){
-    Adapter.fetchHosts()
-			.then(hosts => {
-        Adapter.fetchAreas()
-    			.then(areas => {
-            console.log(areas)
-            this.setState({hosts, areas})
-          })
+    let hostsProm = Adapter.fetchHosts()
+    let areasProm = Adapter.fetchAreas()
+
+    Promise.all([hostsProm, areasProm])
+      .then( ([hosts, areas]) => {
+        areas = Format.areas(areas)
+        this.setState({hosts, areas})
       })
 	}
+
 
   activateAll = (activated) => {
     this.setState( state =>
@@ -31,10 +32,11 @@ class App extends Component {
     )
   }
 
+
   selectHost = (selectedHostId) => { this.setState({selectedHostId}) }
 
-  renderActiveHosts = () => this.state.hosts.filter( host => host.active )
 
+  renderActiveHosts = () => this.state.hosts.filter( host => host.active )
 
 
   setArea = (id, area) => {
