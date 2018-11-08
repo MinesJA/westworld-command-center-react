@@ -124,81 +124,27 @@
     "areas": [
       { "id": 1,
         "name": "high_plains",
-        "limit": 8,
-        "style": {
-          "top": "20px",
-          "left": "315px",
-          "width": "300px",
-          "padding": "10px",
-          "minHeight": "200px",
-          "maxHeight": "200px",
-          "height": "100%"
-        }
+        "limit": 8
       },
       { "id": 2,
         "name": "lowlands",
-        "limit": 6,
-        "style": {
-          "top": "225px",
-          "left": "360px",
-          "width": "265px",
-          "padding": "10px",
-          "minHeight": "190px",
-          "maxHeight": "190px",
-          "height": "100%"
-        }
+        "limit": 6
       },
       { "id": 3,
         "name": "under_construction",
-        "limit": 8,
-        "style": {
-          "top": "425px",
-          "left": "350px",
-          "width": "300px",
-          "padding": "10px",
-          "minHeight": "200px",
-          "maxHeight": "200px",
-          "height": "100%"
-        }
+        "limit": 8
       },
       { "id": 4,
         "name": "pariah",
-        "limit": 14,
-        "style": {
-          "top": "450px",
-          "left": "680px",
-          "width": "500px",
-          "padding": "10px",
-          "minHeight": "185px",
-          "maxHeight": "185px",
-          "height": "100%"
-        }
+        "limit": 14
       },
       { "id": 5,
         "name": "python_pass",
-        "limit": 14,
-        "style": {
-          "top": "10px",
-          "left": "660px",
-          "width": "500px",
-          "padding": "10px",
-          "minHeight": "185px",
-          "maxHeight": "185px",
-          "height": "100%"
-        }
+        "limit": 14
       },
       { "id": 6,
         "name": "badlands",
-        "limit": 10,
-        "style": {
-          "top": "225px",
-          "left": "700px",
-          "width": "400px",
-          "padding": "10px",
-          "minHeight": "175px",
-          "maxHeight": "175px",
-          "height": "100%"
-        }
+        "limit": 10
       }
     ]
   }

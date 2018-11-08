@@ -2,7 +2,7 @@ import React from 'react'
 import { Card } from 'semantic-ui-react'
 import Host from './Host'
 
-const HostList = ({ hosts, selectHost, selectedHostId }) => {
+const HostList = ({ hosts, selectHost, selectedHostId, limit }) => {
 
   const renderHosts = () => (
     hosts.map( ({id, imageUrl }) => {

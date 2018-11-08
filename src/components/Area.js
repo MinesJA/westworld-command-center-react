@@ -1,24 +1,32 @@
 import React from 'react';
 import HostList from './HostList';
+import PropTypes from 'prop-types';
 
-const Area = ({ value, name, limit, style, hosts, selectHost, selectedHostId }) => {
+const Area = ({ value, name, limit, hosts, selectHost, selectedHostId }) => {
 
-  const renderHosts = () => {
-    let filteredHosts = hosts.filter( host => host.area === value )
 
-    return filteredHosts.slice(0,limit)
-  }
 
   return(
-    <div style={style} className='area'>
+    <div className='area' id={value}>
       <h3 className='labels'>{name}</h3>
       <HostList
-        hosts={renderHosts()}
+        hosts={hosts}
         selectHost={selectHost}
         selectedHostId={selectedHostId}
+        limit={limit}
       />
     </div>
   )
+}
+
+Area.propTypes = {
+  hosts: function(props, propName, componentName){
+    if(props.hosts.length > props.limit){
+      return new Error(
+        'TOO MANY HOSTS WHATR YA CRAZYYZ?!!'
+      )
+    }
+  }
 }
 
 export default Area;
