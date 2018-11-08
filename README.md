@@ -1,28 +1,42 @@
 # Westworld Command Center
 
-
+Overview
+========
+The Executives at Delos Inc. need you to help them build some software for their new theme park: WestWorld. WestWorld is an interactive theme park where guests get to experience life in the Wild Wild West with the help of some AI known as "Hosts". But WestWorld needs a way to deploy these hosts to different areas of the park and bring them back to "Cold Storage" where they can be repaired or retired. Your job is to create a React based interface that allows you to select Hosts, activate them, and send them to any area the park or call them back to Cold Storage.
 
 
 DB
 ==
-Run `json-server --watch db.json --port 3001` to start the server on port 3001 (so you can run React on port 3000 simultaneously).
+Run `json-server --watch db.json --port 3001` to start the server on port 4000 (so you can run React on port 4000 simultaneously).
 
 Endpoints:
 1. GET /hosts
 2. GET /areas
 
 
+Video Demo: https://youtu.be/NXP-mNpUTYU
+
+
+Layout
+======
+
+A number of components have already been built for you. You can start with the first two components branching from App:
+1) WestWorldMap
+2) Headquarters
+
+Think of what the best way to lay out the rest is.
 
 Rules
-========
+=====
 Hosts
-1. Clicking a host selects them on the map and displays their information in the info box in the bottom right corner. Only one host can be selected at a time.
-2. Hosts can only exist in one area at a time (including ColdStorage).
+1. Clicking a Host selects them on the map and displays their information in the info box in the bottom right corner. If a Host is selected, clicking a different Host should de-select the previous Host (only one selected Host at a time).
+2. Hosts can either exist in one of the many areas, or in Cold Storage.
+3. If a Host is 'Decommissioned' (ie. if their 'active' attribute is set to 'false') then they should appear in Cold Storage.
 
 HostInfo
 1. The image, name, and gender icon should be set based on the currently selected Host.
-2. The Area dropdown should be selected with the area the host is currently in (initially pulled from db).
-3. The Active/Decommissioned toggle should reflect the hosts current status (initially pulled from db).
+2. The Active/Decommissioned toggle should reflect the hosts current "active" status. If the 'active' attribute is false, the host toggle should read "Decommissioned". If the 'active' attribute is set to true, the host toggle should read 'Active'.
+3. The Area dropdown should be selected with the area the host is currently in. If the host is 'Decommissioned', Cold Storage, the dropdown should be rendered
 4. If a host has an active status, selecting a new area from the dropdown should move that host to the corresponding area. If the host is Decommissioned they should not be able to leave ColdStorage.
 5. Setting a hosts toggle to Decommissioned should immediately remove them from their area and place them in ColdStorage.
 
