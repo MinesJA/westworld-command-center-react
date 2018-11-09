@@ -19,9 +19,15 @@ class HostInfo extends Component{
   }
 
   handleChange = (e, {value}) => {
-    this.setState({value})
+    let area = this.props.areas.find( area => area.name == value)
+    let hostsInArea = this.props.hosts.filter( host => host.area === value)
 
-    this.props.setArea(this.props.selectedHost.id, value)
+    if(area.limit < (hostsInArea.length + 1)){
+      alert("TOo many hosts")
+    } else {
+      this.setState({value})
+      this.props.setArea(this.props.selectedHost.id, value)
+    }
   }
 
   toggle = () => {
@@ -33,6 +39,7 @@ class HostInfo extends Component{
   render(){
     const { value, areas, active } = this.state
     const { firstName, imageUrl, gender } = this.props.selectedHost
+    const formattedNames = areas.map( area => area.namesObject)
     return (
       <Grid>
         <Grid.Column width={6}>
@@ -54,7 +61,7 @@ class HostInfo extends Component{
                 onChange={this.handleChange}
                 value={value}
                 selection
-                options={areas}
+                options={formattedNames}
               />
             </Card.Content>
           </Card>

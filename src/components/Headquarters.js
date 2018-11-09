@@ -22,6 +22,7 @@ const Headquarters = ({ areas, hosts, selectedHostId, selectHost, activateHost, 
       </Grid.Column>
       <Grid.Column width={5}>
         <Details
+          hosts={hosts}
           activateHost={activateHost}
           selectedHost={selectedHost()}
           areas={areas}
