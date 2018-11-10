@@ -1,0 +1,15 @@
+a.ui.raised.card.host {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+}
+
+a.ui.raised.card.selected {
+  border: 2px solid red;
+  borderRadius: 5px;
+}
+
+a.ui.raised.card.selected:hover {
+  border: 2px solid red;
+  borderRadius: 5px;
+}

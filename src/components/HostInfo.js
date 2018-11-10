@@ -1,65 +1,62 @@
 import React, { Component } from 'react'
-import { Radio, Icon, Card, Grid, Image, Dropdown, List, Segment, Divider } from 'semantic-ui-react'
+import { Radio, Icon, Card, Grid, Image, Dropdown, Divider } from 'semantic-ui-react'
+import { Log } from '../services/Log'
 
 
-class HostInfo extends Component{
-  state = {
-    checked: false,
-    value: "Area one",
-    areas: [
-      {key: 'area1', text: 'area1', value: 'Area one'},
-      {key: 'area2', text: 'area2', value: 'Area two'},
-      {key: 'area3', text: 'area3', value: 'Area three'}
-    ]
-    // This state is here to show you how the Info box should work. But it doesn't have to (and probably shouldn't) live here
-    // Plus the areas aren't called area1,2,or 3. That's just a placeholder.
+const HostInfo = ({ selectedHost, areas, hosts, addLog, setArea, activateHost }) => {
+
+  const handleChange = (e, {value}) => {
+    let newArea = areas.find( area => area.name == value)
+    let hostsInArea = hosts.filter( host => host.area === value)
+
+    if(newArea.limit < (hostsInArea.length + 1)){
+      addLog(Log.error(`Too many hosts. Cannot add ${selectedHost.firstName} to ${newArea.namesObject.text}.`))
+    } else {
+      addLog(Log.notify(`${selectedHost.firstName} set in area ${newArea.namesObject.text}`))
+      setArea(selectedHost.id, value)
+    }
   }
 
-  handleChange = (e) => {
-    // Your code here
+  const toggle = () => {
+    if(selectedHost.active){
+      addLog(Log.notify(`Decommissioned ${selectedHost.firstName}`))
+    }else{
+      addLog(Log.warn(`Activated ${selectedHost.firstName}`))
+    }
+
+    activateHost(selectedHost.id)
   }
 
+  const formattedNames = areas.map( area => area.namesObject)
 
-  toggle = () => {
-    // Your code here
-  }
+  return (
+    <Grid>
+      <Grid.Column width={6}>
+        <Image style={{overflow: "hidden", height: "160px", width: "130px"}} floated='left' size='small' src={selectedHost.imageUrl}/>
+      </Grid.Column>
+      <Grid.Column width={10}>
+        <Card>
+          <Card.Content>
+            <Card.Header>
+              {selectedHost.firstName} | {selectedHost.gender === "Male" ? <Icon name='man' /> : <Icon name='woman' />}
+            </Card.Header>
+            <Card.Meta>
+              <Radio style={{margin: "10px"}} slider onChange={toggle} label={selectedHost.active ? "Active" : "Decommissioned"} checked={selectedHost.active}/>
+            </Card.Meta>
 
-  render(){
-    const { value, areas } = this.state
-    // A lot of these values are hardcoded.....but they shouldn't be, hint hint....
-
-    return (
-      <Segment>
-        <Grid>
-          <Grid.Column width={6}>
-            <Image floated='left' size='small' src='https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/westworld-james.jpg'/>
-          </Grid.Column>
-          <Grid.Column width={10}>
-            <Card>
-              <Card.Content>
-                <Card.Header>
-                  Teddy Flood <Icon name='man' />
-                  { /* What should happen when the host isn't a man? Or when his name isn't Teddy? */}
-                </Card.Header>
-                <Card.Meta>
-                  <Radio style={{margin: "10px"}} slider onChange={this.toggle} label={this.state.checked ? "Active" : "Decommissioned"} checked={this.state.checked}/>
-                </Card.Meta>
-
-                <Divider />
-                Current Area:
-                <Dropdown
-                  onChange={this.handleChange}
-                  value={value}
-                  selection
-                  options={areas} />
-
-              </Card.Content>
-            </Card>
-          </Grid.Column>
-        </Grid>
-      </Segment>
-    )
-  }
+            <Divider />
+            Current Area:
+            <Dropdown
+              onChange={handleChange}
+              value={selectedHost.area}
+              selection
+              options={formattedNames}
+            />
+          </Card.Content>
+        </Card>
+      </Grid.Column>
+    </Grid>
+  )
 }
 
 export default HostInfo
