@@ -39,7 +39,7 @@ Endpoints:
 Deliverables
 ============
 
-The components and styling have already been given to you. It'll be your job to import the components in the right order to build the component tree correctly and add most of the logic. Any conditional styling will be given via changing classNames. For example, if styling on a button should changed based on a click, you'll be given two classNames to swap in depending on what the current status of that button is.
+The components and styling have already been given to you. It'll be your job to import the components in the right order to build the component tree correctly and add most of the logic. Any conditional styling will be given via changing classNames. For example, if styling on a button should be changed based on a click, you'll be given two classNames to swap in depending on what the current status of that button is.
 
 Checkpoint 1: Build the Component Tree
 --------------------------------------
