@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-import React, { Component } from 'react';
-import { Segment } from 'semantic-ui-react';
-
-
-class WestworldMap extends Component {
-  
-  render(){
-    return (
-      <Segment id="map" >
-        { /* Your code here */ }
-      </Segment>
-=======
 import React from 'react';
 import Area from './Area.js';
 import { Segment } from 'semantic-ui-react';
@@ -31,7 +18,6 @@ const WestworldMap = ({areas, hosts, selectedHostId, selectHost}) => {
         selectedHostId={selectedHostId}
         selectHost={selectHost}
       />
->>>>>>> solution
     )
   }
 
