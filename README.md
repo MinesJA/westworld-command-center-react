@@ -25,7 +25,7 @@ DB
 --
 The database is based on a db.json file in the repo. There will be no Posts or Patches, only Get requests.
 
-Run `json-server --watch db.json --port 3001` in your terminal to start the server on port 4000 (so you can run React on port 3000 simultaneously).
+Run `json-server --watch db.json --port 4000` in your terminal to start the server on port 4000 (so you can run React on port 3000 simultaneously).
 
 Endpoints:
 1. GET /hosts
