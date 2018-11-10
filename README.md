@@ -9,6 +9,11 @@ The Executives at Delos Inc. need you to help them build some software for their
 
 ![alt map](https://i.imgur.com/mPo0UYQ.png)
 
+Note on Styling
+===============
+The styling is a mix of pre-written CSS and Semantic components. Don't worry about it too much. As long as you're using the className's and id's we suggest everything should be fine. If you have a question about how one of the Semantic components works, search for the component in the Semantic docs for a complete run down of how it works:
+
+[Semantic UI React Docs](https://react.semantic-ui.com/)
 
 Setup
 =====
@@ -16,7 +21,6 @@ Watch a walk through of what's expected to complete this challenge here: https:/
 
 Clone
 -----
-
 `git fork` and `git clone` this repo onto your computer. 
 
 Run `npm install && npm start` in your terminal to start the React application.
@@ -78,8 +82,25 @@ Each `Area` should only allow the number of hosts given by that area's limit att
 
 Checkpoint 5: Activate All/Decommission All
 --------------------------------------------
-Clicking the `Activate All` button should activate all hosts. The button should turn green and change to read `Decommission All`. Clicking the `Decommssion All` button should decommission all hosts and the button should change red and read `Activate All`.
+Clicking the `Activate All` button should activate all hosts. The button should turn green and change to read `Decommission All`. Clicking the `Decommssion All` button should decommission all hosts and the button should change red and read `Activate All`. Remember, if all hosts are activated, this should be reflected in the host's activate toggle.
 
 Checkpoint 5: Logging
 ----------------------
+Last but not least, you should log the actions a user takes. Use the Log service class we've provided (located in: `src/services/Log`). To use the class all you need to do is invoke a particular method and send in the message you want to log as an argument. Don't worry about the styling, that's taken care of. For example, if you want to log an error saying "Something bad happened" you would write:
+
+`Log.error("Something bad happened")`
+
+This would return the following object:
+
+`{type: 'error', msg: '[9:00pm] ERROR: Something bad happened"}`
+
+You shoud collect these in some type of error somewhere and give it to the `.map` statement in the `LogPanel` component to get them to render.
+
+Finish
+------
+If you've completed all the Checkpoints, good for you because that is a ton.
+
+
+
+At the very least you should be logging teh following: 
 
