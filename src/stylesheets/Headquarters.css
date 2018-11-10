@@ -1,0 +1,33 @@
+.HQComps {
+  height: 100%;
+  margin: 2px;
+  padding: 2px;
+}
+
+#details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+logpanel {
+  width: 100%;
+}
+
+pre {
+  height: 120px;
+  overflow-y: scroll;
+  white-space: pre-wrap;
+}
+
+.error {
+  color: red;
+}
+
+.warn {
+  color: orange;
+}
+
+.notify {
+  color: black;
+}

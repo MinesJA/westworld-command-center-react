@@ -32,31 +32,13 @@ class App extends Component {
     )
   }
 
-
   selectHost = (selectedHostId) => { this.setState({selectedHostId}) }
-
 
   renderActiveHosts = () => this.state.hosts.filter( host => host.active )
 
 
   setArea = (id, areaName) => {
-    // console.log(this.state.areas.find( area => area.name === areaName))
-    //
-    //
-    // let area = this.state.areas.find( area => area.name === areaName)
-    //
-    // let newHosts = this.state.hosts.map( host => {
-    //   if(host.id === id){
-    //     host.area = areaName
-    //   }
-    // })
-
-    // if(area.limit < newHosts.length){
-    //   alert("Area full")
-    // }else{
-    //   alert("ok")
-    // }
-
+    
     this.setState( state => {
 
       state.hosts.forEach( host => {

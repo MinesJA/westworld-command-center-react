@@ -5,13 +5,24 @@ import Host from './Host'
 const HostList = ({ hosts, selectHost, selectedHostId, limit }) => {
 
   const renderHosts = () => (
-    hosts.map( ({id, imageUrl }) => {
+
+    hosts.map( ({ id, imageUrl }) => {
       if(selectedHostId === id){
-        return <Host imageUrl={imageUrl} id={id} key={id} selectHost={selectHost} selected />
+        return <Host
+                 imageUrl={imageUrl}
+                 id={id} key={id}
+                 selectHost={selectHost}
+                 selected
+               />
       }else{
-        return <Host imageUrl={imageUrl} id={id} key={id} selectHost={selectHost} />
+        return <Host
+                 imageUrl={imageUrl}
+                 id={id} key={id}
+                 selectHost={selectHost}
+               />
       }
     })
+    
   )
 
   return(

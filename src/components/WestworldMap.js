@@ -5,21 +5,7 @@ import { Segment } from 'semantic-ui-react';
 
 const WestworldMap = ({areas, hosts, selectedHostId, selectHost}) => {
 
-  const renderHosts = (value, limit) => {
-    // let filteredHosts = hosts.filter( host => host.area === value )
-
-    // debugger
-    let areaHosts = hosts.filter( host => host.area === value )
-    return areaHosts
-    // if(areaHosts > limit){
-    //
-    // }
-    // return
-
-    // return filteredHosts.slice(0,limit)
-  }
-
-
+  const renderHosts = (value, limit) => ( hosts.filter( host => host.area === value ) )
 
   const renderAreas = () => {
     return areas.map( ({ namesObject: {text, value}, formatName, limit }) =>
@@ -34,7 +20,6 @@ const WestworldMap = ({areas, hosts, selectedHostId, selectHost}) => {
       />
     )
   }
-
 
   return (
     <Segment id="map" >

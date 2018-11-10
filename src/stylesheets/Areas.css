@@ -3,6 +3,10 @@
   position: absolute;
 }
 
+.labels {
+  padding: 5px;
+}
+
 #high_plains {
   top: 20px;
   left: 315px;

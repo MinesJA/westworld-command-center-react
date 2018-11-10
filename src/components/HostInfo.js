@@ -1,74 +1,62 @@
 import React, { Component } from 'react'
 import { Radio, Icon, Card, Grid, Image, Dropdown, Divider } from 'semantic-ui-react'
+import { Log } from '../services/Log'
 
 
-class HostInfo extends Component{
-  state = {
-      value: this.props.selectedHost.area,
-      areas: this.props.areas,
-      active: this.props.selectedHost.active
-    }
+const HostInfo = ({ selectedHost, areas, hosts, addLog, setArea, activateHost }) => {
 
-  componentDidUpdate(prevProps, prevState){
-    if(this.props.selectedHost !== prevProps.selectedHost){
-      this.setState({
-        value: this.props.selectedHost.area,
-        active: this.props.selectedHost.active
-      })
-    }
-  }
+  const handleChange = (e, {value}) => {
+    let newArea = areas.find( area => area.name == value)
+    let hostsInArea = hosts.filter( host => host.area === value)
 
-  handleChange = (e, {value}) => {
-    let area = this.props.areas.find( area => area.name == value)
-    let hostsInArea = this.props.hosts.filter( host => host.area === value)
-
-    if(area.limit < (hostsInArea.length + 1)){
-      alert("TOo many hosts")
+    if(newArea.limit < (hostsInArea.length + 1)){
+      addLog(Log.error(`Too many hosts. Cannot add ${selectedHost.firstName} to ${newArea.namesObject.text}.`))
     } else {
-      this.setState({value})
-      this.props.setArea(this.props.selectedHost.id, value)
+      addLog(Log.notify(`${selectedHost.firstName} set in area ${newArea.namesObject.text}`))
+      setArea(selectedHost.id, value)
     }
   }
 
-  toggle = () => {
-    this.setState({active: !this.state.active})
+  const toggle = () => {
+    if(selectedHost.active){
+      addLog(Log.notify(`Decommissioned ${selectedHost.firstName}`))
+    }else{
+      addLog(Log.warn(`Activated ${selectedHost.firstName}`))
+    }
 
-    this.props.activateHost(this.props.selectedHost.id)
+    activateHost(selectedHost.id)
   }
 
-  render(){
-    const { value, areas, active } = this.state
-    const { firstName, imageUrl, gender } = this.props.selectedHost
-    const formattedNames = areas.map( area => area.namesObject)
-    return (
-      <Grid>
-        <Grid.Column width={6}>
-          <Image style={{overflow: "hidden", height: "160px", width: "130px"}} floated='left' size='small' src={imageUrl}/>
-        </Grid.Column>
-        <Grid.Column width={10}>
-          <Card>
-            <Card.Content>
-              <Card.Header>
-                {firstName} | {gender === "Male" ? <Icon name='man' /> : <Icon name='woman' />}
-              </Card.Header>
-              <Card.Meta>
-                <Radio style={{margin: "10px"}} slider onChange={this.toggle} label={active ? "Active" : "Decommissioned"} checked={active}/>
-              </Card.Meta>
+  const formattedNames = areas.map( area => area.namesObject)
 
-              <Divider />
-              Current Area:
-              <Dropdown
-                onChange={this.handleChange}
-                value={value}
-                selection
-                options={formattedNames}
-              />
-            </Card.Content>
-          </Card>
-        </Grid.Column>
-      </Grid>
-    )
-  }
+  return (
+    <Grid>
+      <Grid.Column width={6}>
+        <Image style={{overflow: "hidden", height: "160px", width: "130px"}} floated='left' size='small' src={selectedHost.imageUrl}/>
+      </Grid.Column>
+      <Grid.Column width={10}>
+        <Card>
+          <Card.Content>
+            <Card.Header>
+              {selectedHost.firstName} | {selectedHost.gender === "Male" ? <Icon name='man' /> : <Icon name='woman' />}
+            </Card.Header>
+            <Card.Meta>
+              <Radio style={{margin: "10px"}} slider onChange={toggle} label={selectedHost.active ? "Active" : "Decommissioned"} checked={selectedHost.active}/>
+            </Card.Meta>
+
+            <Divider />
+            Current Area:
+            <Dropdown
+              onChange={handleChange}
+              value={selectedHost.area}
+              selection
+              options={formattedNames}
+            />
+          </Card.Content>
+        </Card>
+      </Grid.Column>
+    </Grid>
+  )
 }
 
 export default HostInfo

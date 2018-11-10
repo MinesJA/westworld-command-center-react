@@ -1,23 +1,4 @@
 @import "./stylesheets/App.css";
 @import "./stylesheets/Areas.css";
 @import "./stylesheets/Hosts.css";
-
-.labels {
-  padding: 5px;
-}
-
-.HQComps {
-  height: 100%;
-  margin: 2px;
-  padding: 2px;
-}
-
-#details {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-logpanel {
-  width: 100%;
-}
+@import "./stylesheets/Headquarters.css";
