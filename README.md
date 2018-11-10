@@ -10,7 +10,7 @@ The Executives at Delos Inc. need you to help them build some software for their
 ![alt map](https://i.imgur.com/mPo0UYQ.png)
 
 Note on Styling
-===============
+---------------
 The styling is a mix of pre-written CSS and Semantic components. Don't worry about it too much. As long as you're using the className's and id's we suggest everything should be fine. If you have a question about how one of the Semantic components works, search for the component in the Semantic docs for a complete run down of how it works:
 
 [Semantic UI React Docs](https://react.semantic-ui.com/)
