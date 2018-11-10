@@ -94,13 +94,29 @@ This would return the following object:
 
 `{type: 'error', msg: '[9:00pm] ERROR: Something bad happened"}`
 
-You shoud collect these in some type of error somewhere and give it to the `.map` statement in the `LogPanel` component to get them to render.
+You shoud collect these in some type of array somewhere and give it to the `.map` statement in the `LogPanel` component to get them to render. These should render most recent first (so the first element in the array should have the most recent time stamp).
+
+At the very least you should be logging teh following: 
+
+### 1) Setting a hosts area:
+`Notify: {first name of host} set in area {formatted area name}`
+
+### 2) Activating a host:
+`Warn: Activated {first name of host}`
+
+### 3) Decommissioning a host:
+`Notify: Decommissioned {first name of host}`
+
+### 4) Activating all hosts:
+`Warn: Activating all hosts!`
+
+### 5) Decommissioning all hosts:
+`Notify: Decommissiong all hosts.`
+
+### 6) Trying to add too many hosts to an area:
+`Error: Too many hosts. Cannot add {first name of host} to {formatted area name}`
 
 Finish
 ------
-If you've completed all the Checkpoints, good for you because that is a ton.
-
-
-
-At the very least you should be logging teh following: 
+If you've completed all the Checkpoints, good for you because that is a ton! It is very rare that people are able to finish this in an all day pairing/solo attempt. It would be awesome if you could share the way you solved it!
 
