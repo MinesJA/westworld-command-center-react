@@ -96,7 +96,7 @@ This would return the following object:
 
 You shoud collect these in some type of array somewhere and give it to the `.map` statement in the `LogPanel` component to get them to render. These should render most recent first (so the first element in the array should have the most recent time stamp).
 
-At the very least you should be logging teh following: 
+At the very least you should be logging the following: 
 
 ##### 1) Setting a hosts area:
 `Notify: {first name of host} set in area {formatted area name}`
@@ -119,4 +119,8 @@ At the very least you should be logging teh following:
 Finish
 ------
 If you've completed all the Checkpoints, good for you because that is a ton! It is very rare that people are able to finish this in an all day pairing/solo attempt. It would be awesome if you could share the way you solved it!
+
+Contributing
+------------
+If you find any bugs or have some suggestions, send a PR and we'll try to incorporate it!
 
