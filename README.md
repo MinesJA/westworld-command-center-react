@@ -5,29 +5,41 @@
 
 Overview
 ========
-The Executives at Delos Inc. need you to help them build some software for their new theme park: WestWorld. WestWorld is an interactive theme park where guests get to experience life in the Wild Wild West with the help of some AI known as "Hosts". But WestWorld needs a way to deploy these hosts to different areas of the park and bring them back to "Cold Storage" where they can be repaired or retired. Your job is to create a React based interface that allows you to select Hosts, activate them, and send them to any area the park or call them back to Cold Storage.
+The Executives at Delos Inc. need you to help them build some software for their new theme park: WestWorld. WestWorld is an interactive theme park where guests get to experience life in the Wild Wild West with the help of some AI known as "Hosts". But WestWorld needs a way to deploy these hosts to different areas of the park and bring them back to "Cold Storage" where they can be repaired or retired. Your job is to create a React based interface that allows you to select Hosts, activate them, and send them to any area of the park or call them back to Cold Storage. Your application should look like this when you're finished:
 
+![alt map](https://i.imgur.com/mPo0UYQ.png)
+
+Setup
+=====
+First, watch a walk through of what's expected to complete this application here: https://youtu.be/GhCazAgsJzw
+
+Clone
+-----
+
+Next, `git fork` and `git clone` this repo onto your computer. Then run `npm install && npm start` to start the React application.
 
 DB
-==
-Run `json-server --watch db.json --port 3001` to start the server on port 4000 (so you can run React on port 4000 simultaneously).
+--
+The database is based on a db.json file in the repo.
+
+Run `json-server --watch db.json --port 3001` to start the server on port 4000 (so you can run React on port 3000 simultaneously).
 
 Endpoints:
 1. GET /hosts
 2. GET /areas
 
 
-Video Demo: https://youtu.be/NXP-mNpUTYU
+Deliverables
+============
 
+The components and styling have already been setup for you. It'll be your job to import them in the right order to build the component tree correctly and build out most of the logic. Any conditional styling will be given via changing classNames. For example, if styling should changed based on a click, you'll be given two classNames to swap in depending on what the current status is.
 
-Layout
-======
+Checkpoint 1: Build the Component Tree
+--------------------------------------
 
-A number of components have already been built for you. You can start with the first two components branching from App:
-1) WestWorldMap
-2) Headquarters
+Determine how the component tree should be built. Some of the imports have already been given for you. A couple things to note:
 
-Think of what the best way to lay out the rest is.
+1) Let the visual cue of 
 
 Rules
 =====
