@@ -12,7 +12,7 @@ The Executives at Delos Inc. need you to help them build some software for their
 
 Setup
 =====
-Watch a walk through of what's expected to complete this application here: https://youtu.be/GhCazAgsJzw
+Watch a walk through of what's expected to complete this challenge here: https://youtu.be/GhCazAgsJzw
 
 Clone
 -----
