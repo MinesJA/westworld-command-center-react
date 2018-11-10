@@ -1,56 +1,49 @@
 import React, { Component } from 'react'
 import { Radio, Icon, Card, Grid, Image, Dropdown, Divider } from 'semantic-ui-react'
-import { Log } from '../services/Log'
 
 
-const HostInfo = ({ selectedHost, areas, hosts, addLog, setArea, activateHost }) => {
+const HostInfo = () => {
 
   const handleChange = (e, {value}) => {
-    let newArea = areas.find( area => area.name == value)
-    let hostsInArea = hosts.filter( host => host.area === value)
+    // the 'value' attribute is given via Semantic's Dropdown component.
+    // Don't worry too much about how this works.
+    // Just know that Semantic dropdowns take options as an array of objects in this form:
+    // {key: "some_text", text: "Some Text", value: "some_text"}
+    // You get access to the last one for whatever is selected
+    // See the Semantic docs for more info: https://react.semantic-ui.com/modules/dropdown/#usage-controlled
 
-    if(newArea.limit < (hostsInArea.length + 1)){
-      addLog(Log.error(`Too many hosts. Cannot add ${selectedHost.firstName} to ${newArea.namesObject.text}.`))
-    } else {
-      addLog(Log.notify(`${selectedHost.firstName} set in area ${newArea.namesObject.text}`))
-      setArea(selectedHost.id, value)
-    }
+    // Also, there's more info on this below
   }
 
-  const toggle = () => {
-    if(selectedHost.active){
-      addLog(Log.notify(`Decommissioned ${selectedHost.firstName}`))
-    }else{
-      addLog(Log.warn(`Activated ${selectedHost.firstName}`))
-    }
-
-    activateHost(selectedHost.id)
-  }
-
-  const formattedNames = areas.map( area => area.namesObject)
 
   return (
     <Grid>
       <Grid.Column width={6}>
-        <Image style={{overflow: "hidden", height: "160px", width: "130px"}} floated='left' size='small' src={selectedHost.imageUrl}/>
+        <Image style={{overflow: "hidden", height: "160px", width: "130px"}} floated='left' size='small' src={ /* pass in the right image here */ }/>
       </Grid.Column>
       <Grid.Column width={10}>
         <Card>
           <Card.Content>
             <Card.Header>
-              {selectedHost.firstName} | {selectedHost.gender === "Male" ? <Icon name='man' /> : <Icon name='woman' />}
+              {selectedHost.firstName} | { /* What needs to be true to render the man icon or false to render the woman icon? */ ? <Icon name='man' /> : <Icon name='woman' />}
             </Card.Header>
             <Card.Meta>
-              <Radio style={{margin: "10px"}} slider onChange={toggle} label={selectedHost.active ? "Active" : "Decommissioned"} checked={selectedHost.active}/>
+              <Radio style={{margin: "10px"}} slider onChange={toggle} label={"AmIActive?"} checked={/* What happens when I'm checked */}/>
             </Card.Meta>
 
             <Divider />
             Current Area:
             <Dropdown
               onChange={handleChange}
-              value={selectedHost.area}
+              value={/* This is the value of whatever is currently selected. See example below */}
+              {/*
+                Pass an array of objects to 'options' like so:
+                [{key: "area_one" text: "Area One" value: "area_two"}, {key: "area_two" text: "Area Two" value: "area_two"}]
+                The value should be set to whatever you want currently selected. Like "area_two".
+                The dropdown will display whatever corresponds to the test key, like "Area Two".
+                  */}
               selection
-              options={formattedNames}
+              options={/* These are your selection options. See above. */}
             />
           </Card.Content>
         </Card>

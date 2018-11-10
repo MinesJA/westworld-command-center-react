@@ -1,15 +1,14 @@
 import React from 'react';
 import { Card } from 'semantic-ui-react'
 
-const Host = ({ imageUrl, id, selectHost, selected }) => {
-
-  const clicked = selected ? "host selected" : "host"
+const Host = () => {
 
   return(
     <Card
-      className={clicked}
-      onClick={()=>{selectHost(id)}}
-      image={imageUrl}
+      className="host selected"
+      {/* Remove the "selected" portion of the className above to see what happens to the host. */}
+      onClick={ /* On Click what? */}
+      image={/* I wonder what goes here...*/}
       raised
     />
   )

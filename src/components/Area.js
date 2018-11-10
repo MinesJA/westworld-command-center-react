@@ -1,17 +1,12 @@
 import React from 'react';
-import HostList from './HostList';
-import PropTypes from 'prop-types';
 
-const Area = ({ value, name, limit, hosts, selectHost, selectedHostId }) => (
+const Area = () => (
 
-  <div className='area' id={value}>
-    <h3 className='labels'>{name}</h3>
-    <HostList
-      hosts={hosts}
-      selectHost={selectHost}
-      selectedHostId={selectedHostId}
-      limit={limit}
-    />
+  <div className='area' id={/* how do we get this thing styled right? See Stylesheets and Readme */}>
+    <h3 className='labels'>{/* Don't just pass in the name from the data...clean that thing up */}</h3>
+
+    {/* See Checkpoint 1 item 2 in the Readme for a clue as to what goes here */}
+
   </div>
 
 )
