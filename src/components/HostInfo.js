@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
-import { Radio, Icon, Card, Grid, Image, Dropdown, Divider } from 'semantic-ui-react'
-import { Log } from '../services/Log'
+import React from 'react';
+import '../stylesheets/HostInfo.css';
+import { Radio, Icon, Card, Grid, Image, Dropdown, Divider } from 'semantic-ui-react';
+import { Log } from '../services/Log';
 
 
 const HostInfo = ({ selectedHost, areas, hosts, addLog, setArea, activateHost }) => {
@@ -32,7 +33,12 @@ const HostInfo = ({ selectedHost, areas, hosts, addLog, setArea, activateHost })
   return (
     <Grid>
       <Grid.Column width={6}>
-        <Image style={{overflow: "hidden", height: "160px", width: "130px"}} floated='left' size='small' src={selectedHost.imageUrl}/>
+        <Image
+          className="hostImg"
+          floated='left'
+          size='small'
+          src={selectedHost.imageUrl}
+        />
       </Grid.Column>
       <Grid.Column width={10}>
         <Card>
@@ -41,7 +47,12 @@ const HostInfo = ({ selectedHost, areas, hosts, addLog, setArea, activateHost })
               {selectedHost.firstName} | {selectedHost.gender === "Male" ? <Icon name='man' /> : <Icon name='woman' />}
             </Card.Header>
             <Card.Meta>
-              <Radio style={{margin: "10px"}} slider onChange={toggle} label={selectedHost.active ? "Active" : "Decommissioned"} checked={selectedHost.active}/>
+              <Radio
+                onChange={toggle}
+                label={selectedHost.active ? "Active" : "Decommissioned"}
+                checked={selectedHost.active}
+                slider
+              />
             </Card.Meta>
 
             <Divider />
@@ -49,8 +60,8 @@ const HostInfo = ({ selectedHost, areas, hosts, addLog, setArea, activateHost })
             <Dropdown
               onChange={handleChange}
               value={selectedHost.area}
-              selection
               options={formattedNames}
+              selection
             />
           </Card.Content>
         </Card>

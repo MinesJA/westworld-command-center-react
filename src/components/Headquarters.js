@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../stylesheets/Headquarters.css';
 import { Grid } from 'semantic-ui-react';
 import Details from './Details';
 import ColdStorage from './ColdStorage';
