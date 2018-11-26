@@ -79,11 +79,13 @@ Checkpoint 6: Limit Hosts
 --------------------------
 Each `Area` should only allow the number of hosts given by that area's limit attribute. This includes hosts set to areas in `ColdStorage`. This is a hard deliverable and there are many ways to do this. Think about where you should actually be blocking this action (ie. what component should the rejection happen in).
 
-Checkpoint 5: Activate All/Decommission All
+Checkpoint 7: Activate All/Decommission All
 --------------------------------------------
+The Activate All/Decommission All button is located in the LogPanel component. If you want, you can extract this into a separate component that LogPanel imports, but it's not necessary.
+
 Clicking the `Activate All` button should activate all hosts. The button should turn green and change to read `Decommission All`. Clicking the `Decommission All` button should decommission all hosts and the button should change red and read `Activate All`. Remember, if all hosts are activated, this should be reflected in a host's activate toggle.
 
-Checkpoint 7: Logging
+Checkpoint 8: Logging
 ----------------------
 Last but not least, you should log the actions a user takes. Use the Log service class we've provided (located in: `src/services/Log`). To use the class all you need to do is invoke a particular method (take a look at the class to see what methods are available) and send in the message you want to log as an argument. Don't worry about the styling, that's taken care of. For example, if you want to log an error saying "Something bad happened" you would write:
 
