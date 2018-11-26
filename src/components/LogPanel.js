@@ -1,5 +1,5 @@
 import React from 'react'
-import { Segment, Button  } from 'semantic-ui-react';
+import { Segment, Button } from 'semantic-ui-react';
 import { Log } from '../services/Log'
 
 const LogPanel = ({ events, activated, handleActivate, addLog }) => {
@@ -13,11 +13,9 @@ const LogPanel = ({ events, activated, handleActivate, addLog }) => {
     handleActivate()
   }
 
-
   const color = activated ? "green" : "red"
 
   const text = activated ? "DECOMMISSION ALL" : "ACTIVATE ALL"
-
 
 
   return(
@@ -25,7 +23,12 @@ const LogPanel = ({ events, activated, handleActivate, addLog }) => {
       <pre>
         {events.map((e, i) => <p key={i} className={e.type}>{e.msg}</p>)}
       </pre>
-      <Button fluid color={color} onClick={handleClick}>{text}</Button>
+      <Button
+        fluid
+        color={color}
+        onClick={handleClick}
+        content={text}
+      />
     </Segment>
   )
 }
