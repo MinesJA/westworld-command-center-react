@@ -2,54 +2,73 @@ import React, { Component } from 'react'
 import { Radio, Icon, Card, Grid, Image, Dropdown, Divider } from 'semantic-ui-react'
 
 
-const HostInfo = () => {
+class HostInfo extends Component {
+  state = {
+    options: [{key: "some_area" text: "Some Area" value: "some_area"}, {key: "another_area" text: "Another Area" value: "another_area"}],
+    value: "some_area",
+    // This state is just to show how the dropdown component works.
+    // Options have to be formatted in this way (array of objects with keys of: key, text, value)
+    // Value has to match the value in the object to render the right text.
 
-  const handleChange = (e, {value}) => {
-    // the 'value' attribute is given via Semantic's Dropdown component.
-    // Don't worry too much about how this works.
-    // Just know that Semantic dropdowns take options as an array of objects in this form:
-    // {key: "some_text", text: "Some Text", value: "some_text"}
-    // You get access to the last one for whatever is selected
-    // See the Semantic docs for more info: https://react.semantic-ui.com/modules/dropdown/#usage-controlled
-
-    // Also, there's more info on this below
+    // IMPORTANT: But whether it should be stateful or not is entirely up to you. Change this component however you like.
   }
 
 
-  return (
-    <Grid>
-      <Grid.Column width={6}>
-        <Image style={{overflow: "hidden", height: "160px", width: "130px"}} floated='left' size='small' src={ /* pass in the right image here */ }/>
-      </Grid.Column>
-      <Grid.Column width={10}>
-        <Card>
-          <Card.Content>
-            <Card.Header>
-              {selectedHost.firstName} | { /* What needs to be true to render the man icon or false to render the woman icon? */ ? <Icon name='man' /> : <Icon name='woman' />}
-            </Card.Header>
-            <Card.Meta>
-              <Radio style={{margin: "10px"}} slider onChange={toggle} label={"AmIActive?"} checked={/* What happens when I'm checked */}/>
-            </Card.Meta>
 
-            <Divider />
-            Current Area:
-            <Dropdown
-              onChange={handleChange}
-              value={/* This is the value of whatever is currently selected. See example below */}
-              {/*
-                Pass an array of objects to 'options' like so:
-                [{key: "area_one" text: "Area One" value: "area_two"}, {key: "area_two" text: "Area Two" value: "area_two"}]
-                The value should be set to whatever you want currently selected. Like "area_two".
-                The dropdown will display whatever corresponds to the test key, like "Area Two".
-                  */}
-              selection
-              options={/* These are your selection options. See above. */}
-            />
-          </Card.Content>
-        </Card>
-      </Grid.Column>
-    </Grid>
-  )
+  handleChange = (e, {value}) => {
+    // the 'value' attribute is given via Semantic's Dropdown component.
+    // Put a debugger in here and see what the "value" variable is when you pass in different options.
+    // See the Semantic docs for more info: https://react.semantic-ui.com/modules/dropdown/#usage-controlled
+  }
+
+  toggle = () => {
+    console.log("The radio button fired");
+  }
+
+  render(){
+    return (
+      <Grid>
+        <Grid.Column width={6}>
+          <Image
+            src={ /* pass in the right image here */ }
+            floated='left'
+            size='small'
+            className="hostImg"
+          />
+        </Grid.Column>
+        <Grid.Column width={10}>
+          <Card>
+            <Card.Content>
+              <Card.Header>
+                {"Bob"} | { true ? <Icon name='man' /> : <Icon name='woman' />}
+                { /* Think about how the above should work to conditionally render the right First Name and the right gender Icon */ }
+              </Card.Header>
+              <Card.Meta>
+                <Radio
+                  onChange={this.toggle}
+                  label={"Active"}
+                  {/* Sometimes the label should take "Decommissioned". How are we going to conditionally render that? */}
+                  checked={true}
+                  {/* Checked takes a boolean and determines what position the switch is in. Should it always be true? */}
+                  className="radio"
+                  slider
+                />
+              </Card.Meta>
+
+              <Divider />
+              Current Area:
+              <Dropdown
+                onChange={this.handleChange}
+                value={this.state.value}
+                options={this.state.options}
+                selection
+              />
+            </Card.Content>
+          </Card>
+        </Grid.Column>
+      </Grid>
+    )
+  }
 }
 
 export default HostInfo
