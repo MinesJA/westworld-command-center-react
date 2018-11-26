@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './stylesheets/App.css'
 import { Segment } from 'semantic-ui-react';
 
 
