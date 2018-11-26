@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { Segment, Button, Message } from 'semantic-ui-react';
+import React from 'react'
+import { Segment, Button  } from 'semantic-ui-react';
 import { Log } from '../services/Log'
 
 const LogPanel = ({ events, activated, handleActivate, addLog }) => {

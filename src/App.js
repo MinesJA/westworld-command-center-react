@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../stylesheets/App.css';
+import './stylesheets/App.css';
 import { Segment } from 'semantic-ui-react';
 import WestworldMap from './components/WestworldMap';
 import Headquarters from './components/Headquarters';

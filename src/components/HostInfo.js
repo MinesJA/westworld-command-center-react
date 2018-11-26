@@ -7,7 +7,7 @@ import { Log } from '../services/Log';
 const HostInfo = ({ selectedHost, areas, hosts, addLog, setArea, activateHost }) => {
 
   const handleChange = (e, {value}) => {
-    let newArea = areas.find( area => area.name == value)
+    let newArea = areas.find( area => area.name === value)
     let hostsInArea = hosts.filter( host => host.area === value)
 
     if(newArea.limit < (hostsInArea.length + 1)){
