@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { Segment, Button, Message } from 'semantic-ui-react';
+import React from 'react'
+import { Segment, Button } from 'semantic-ui-react';
 import { Log } from '../services/Log'
 
 const LogPanel = () => {
@@ -7,7 +7,8 @@ const LogPanel = () => {
   const dummyLogs = () => {
     // This is just to show you how this should work. But where should the log data actually get stored?
     // And where should we be creating logs in the first place?
-    // Feel free to use the Log service class (located in: 'src/services/Log') we've created anywhere you like
+    // Use the Log Service class (located in: 'src/services/Log') we've created anywhere you like.
+    // Just remember to import it
 
     let logs = []
 
@@ -23,9 +24,12 @@ const LogPanel = () => {
       <pre>
         {dummyLogs().map((log, i) => <p key={i} className={log.type}>{log.msg}</p>)}
       </pre>
-      <Button fluid color={/* This isn't always goin to be the same color...*/}>
-        {/* And this isn't always going to render the same text...*/}
-      </Button>
+      <Button
+        fluid
+        color={/* This isn't always goin to be the same color...*/}
+        label={"ACTIVATE ALL"}
+        {/* Should the button always read "ACTIVATE ALL"? When should it read "DECOMMISSION ALL"? */}
+      />
     </Segment>
   )
 }
