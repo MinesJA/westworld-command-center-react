@@ -5,7 +5,7 @@ import { Segment } from 'semantic-ui-react';
 
 class App extends Component {
 
-  // As you go through the components you'll see a lot of functional components.
+  // As you go through the components given you'll see a lot of functional components.
   // But feel free to change them to whatever you want.
   // It's up to you whether they should be stateful or not.
 

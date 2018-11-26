@@ -11,7 +11,7 @@ The Executives at Delos Inc. need you to help them build some software for their
 
 Note on Styling
 ---------------
-The styling is a mix of pre-written CSS and Semantic components. Don't worry about it too much. As long as you're using the className's and id's we suggest everything should be fine. If you have a question about how one of the Semantic components works, search for the component in the Semantic docs for a complete run down of how it works:
+The styling is a mix of pre-written CSS and Semantic components. Don't worry about it too much. As long as you're using the className's and id's we suggest everything should be fine. If you have a question about how one of the Semantic components works, search for the component in the Semantic docs for a complete run down:
 
 [Semantic UI React Docs](https://react.semantic-ui.com/)
 
@@ -21,7 +21,7 @@ Watch a walk through of what's expected to complete this challenge here: https:/
 
 Clone
 -----
-`git fork` and `git clone` this repo onto your computer. 
+`git fork` and `git clone` this repo onto your computer.
 
 Run `npm install && npm start` in your terminal to start the React application.
 
@@ -45,9 +45,9 @@ Checkpoint 1: Build the Component Tree
 --------------------------------------
 Determine how the component tree should be built. Some of the imports have already been given for you. Before you get started, it is highly suggested to draw your component tree on paper. A couple things to note:
 
-1. Let the visual cue of the application guide you. For example, there are clearly two main sections to this application: The top half (`WestworldMap`) and the bottome half (`Headquarters`). How should each of those components import the components that live inside them?
+1. Let the visual cue of the application guide you. For example, there are clearly two main sections to this application: The top half (`WestworldMap`) and the bottom half (`Headquarters`). How should each of those components import the components that live inside them?
 2. Aside from visual cues, what functional cues can you get from the application? For example, clearly the `Area` component holds hosts in a type of list. So what component does an area need to render that list? Is there another component that also holds hosts in a list that's not an area component?
-3. Remember that two seperate component branches can import the same component.
+3. Remember that two separate component branches can import the same component.
 
 Checkpoint 2: Determine Where State Lives
 -----------------------------------------
@@ -57,8 +57,7 @@ You're going to be fetching information from two endpoints. Where should you be 
 
 Checkpoint 3: Render the Areas
 ------------------------------
-Area info comes in through the `/areas` endpoint. You'll have to turn that into the appropriate number of areas on the map. Styling is given for you but you'll have to pass the area name to the `id` attribute to make it appear in the right place on the map. Format the name to remove underscores and capitalize all words for the label. Ex: 'high_plains' should be displayed as "High Plains"
-
+Area info comes in through the `/areas` endpoint. You'll have to use that to render the right number of area components on the map. Styling is given for you but you'll have to pass the area name to the `id` attribute to make it appear in the right place on the map. Format the name to remove underscores and capitalize all words for the label. Ex: 'high_plains' should be displayed as "High Plains"
 
 Checkpoint 4: Render the Hosts
 ------------------------------
@@ -68,25 +67,25 @@ Checkpoint 5: Host Behavior
 ---------------------------
 Follow these rules for selecting and moving hosts:
 
-1. Clicking a `Host` selects them with a red border and displays their information in the `HostInfo` component.
+1. Clicking a `Host` selects them with a red border and displays their information in the `HostInfo` component. Styling has been given via classNames (see Host component).
 2. Only one `Host` can be selected at a time.
 3. Only one `Host` can exist on the screen at a time. If they're in `Cold Storage` then they're not on the `WestworldMap` and visa versa.
-4. If a host's `active` attribute is set to `false` then they are decommissioned and should appear in `ColdStorage`. The `HostInfo` toggle should reflect this as well, reading "Active" if `active: true` and "Decomissioned" if `active: false`. 
+4. If a host's `active` attribute is set to `false` then they are decommissioned and should appear in `ColdStorage`. The `HostInfo` radio button should reflect this as well, reading "Active" if `active: true` and "Decomissioned" if `active: false`.
 5. The Area dropdown should be pre-selected with the area the host is currently in, even if they are in `ColdStorage`.
-4. If a host has an `active` status, selecting a new area from the dropdown should move that host to the corresponding area. If the host is Decommissioned they should not be able to leave `ColdStorage`, but their `area` attribute/dropdown should still update.
-5. Setting a hosts toggle to Decommissioned should immediately remove them from their area and place them in `ColdStorage`.
+6. If a host is Active, selecting a new area from the dropdown should move that host to the corresponding area. If the host is Decommissioned they should not be able to leave `ColdStorage`, but their `area` attribute/dropdown should still update.
+7. Setting a hosts toggle to Decommissioned should immediately remove them from their area and place them in `ColdStorage`.
 
-Checkpoint 4: Limit Hosts
+Checkpoint 6: Limit Hosts
 --------------------------
 Each `Area` should only allow the number of hosts given by that area's limit attribute. This includes hosts set to areas in `ColdStorage`. This is a hard deliverable and there are many ways to do this. Think about where you should actually be blocking this action (ie. what component should the rejection happen in).
 
 Checkpoint 5: Activate All/Decommission All
 --------------------------------------------
-Clicking the `Activate All` button should activate all hosts. The button should turn green and change to read `Decommission All`. Clicking the `Decommssion All` button should decommission all hosts and the button should change red and read `Activate All`. Remember, if all hosts are activated, this should be reflected in the host's activate toggle.
+Clicking the `Activate All` button should activate all hosts. The button should turn green and change to read `Decommission All`. Clicking the `Decommission All` button should decommission all hosts and the button should change red and read `Activate All`. Remember, if all hosts are activated, this should be reflected in a host's activate toggle.
 
-Checkpoint 5: Logging
+Checkpoint 7: Logging
 ----------------------
-Last but not least, you should log the actions a user takes. Use the Log service class we've provided (located in: `src/services/Log`). To use the class all you need to do is invoke a particular method and send in the message you want to log as an argument. Don't worry about the styling, that's taken care of. For example, if you want to log an error saying "Something bad happened" you would write:
+Last but not least, you should log the actions a user takes. Use the Log service class we've provided (located in: `src/services/Log`). To use the class all you need to do is invoke a particular method (take a look at the class to see what methods are available) and send in the message you want to log as an argument. Don't worry about the styling, that's taken care of. For example, if you want to log an error saying "Something bad happened" you would write:
 
 `Log.error("Something bad happened")`
 
@@ -94,9 +93,9 @@ This would return the following object:
 
 `{type: 'error', msg: '[9:00pm] ERROR: Something bad happened"}`
 
-You shoud collect these in some type of array somewhere and give it to the `.map` statement in the `LogPanel` component to get them to render. These should render most recent first (so the first element in the array should have the most recent time stamp).
+You should collect these in some type of array somewhere and give it to the `.map` statement in the `LogPanel` component to get them to render. These should render most recent first (so the first element in the array should have the most recent time stamp).
 
-At the very least you should be logging the following: 
+At the very least you should be logging the following:
 
 ##### 1) Setting a hosts area:
 `Notify: {first name of host} set in area {formatted area name}`
@@ -123,4 +122,3 @@ If you've completed all the Checkpoints, good for you because that is a ton! It 
 Contributing
 ------------
 If you find any bugs or have some suggestions, send a PR and we'll try to incorporate it!
-

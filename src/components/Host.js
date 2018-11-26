@@ -5,7 +5,7 @@ import { Card } from 'semantic-ui-react'
 const Host = () => (
   <Card
     className="host selected"
-    {/* Remove the "selected" portion of the className above to see what happens to the host. */}
+    {/* NOTE: The className "host selected" renders a different style than simply "host". */}
     onClick={ /* On Click what? */}
     image={/* I wonder what goes here...*/}
     raised
