@@ -51,7 +51,6 @@ class HostInfo extends Component {
                   {/* Sometimes the label should take "Decommissioned". How are we going to conditionally render that? */}
                   checked={true}
                   {/* Checked takes a boolean and determines what position the switch is in. Should it always be true? */}
-                  className="radio"
                   slider
                 />
               </Card.Meta>
