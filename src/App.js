@@ -23,7 +23,6 @@ class App extends Component {
       })
 	}
 
-
   activateAll = (activated) => {
     this.setState( state =>
       state.hosts.map( host => {

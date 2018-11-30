@@ -11,5 +11,11 @@ export class Adapter {
     return fetch(URL + "areas")
       .then(res => res.json())
   }
-  
+
 }
+
+
+import { Adapter } from '/services/Adapter';
+
+Adapter.fetchHosts()
+  .then(res => th)
